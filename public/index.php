@@ -9,4 +9,5 @@ require_once dirname(__DIR__) . "/config/init.php";
 
 new App();
 
-var_dump(App::$app->getProperties());
+// throw new Exception("Exception!");
+echo "Все ОК";

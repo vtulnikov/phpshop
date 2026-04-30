@@ -8,13 +8,16 @@ class Registry
 
     private static array $properties = [];
 
-    public function setProperty($name, $value){
+    public function setProperty($name, $value)
+    {
         self::$properties[$name] = $value;
     }
-    public function getProperty($name){
+    public function getProperty($name)
+    {
         return self::$properties[$name];
     }
-    public function getProperties(){
+    public function getProperties()
+    {
         return self::$properties;
     }
 }

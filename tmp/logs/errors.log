@@ -1,0 +1,19 @@
+[2026-04-30 19:11:11] Текст ошибки register_shutdown_function(): Argument #1 ($callback) must be a valid callback, class vvt\ErrorHandler does not have a method "fatalErrorHandle" | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 19
+=============
+[2026-04-30 19:11:26] Текст ошибки register_shutdown_function(): Argument #1 ($callback) must be a valid callback, class vvt\ErrorHandler does not have a method "fatalErrorHandle" | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 19
+=============
+[2026-04-30 19:11:33] Текст ошибки register_shutdown_function(): Argument #1 ($callback) must be a valid callback, class vvt\ErrorHandler does not have a method "fatalErrorHandle" | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 19
+=============
+[2026-04-30 19:11:43] Текст ошибки register_shutdown_function(): Argument #1 ($callback) must be a valid callback, class vvt\ErrorHandler does not have a method "fatalErrorHandle" | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 19
+=============
+[2026-04-30 19:12:48] Текст ошибки Exception! | Файл S:\laragon\www\shop\public\index.php | Строка 12
+=============
+[2026-04-30 19:12:51] Текст ошибки Exception! | Файл S:\laragon\www\shop\public\index.php | Строка 12
+=============
+[2026-04-30 19:12:51] Текст ошибки Exception! | Файл S:\laragon\www\shop\public\index.php | Строка 12
+=============
+[2026-04-30 19:13:27] Текст ошибки register_shutdown_function(): Argument #1 ($callback) must be a valid callback, class vvt\ErrorHandler does not have a method "fatalErrorHandle" | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 19
+=============
+[2026-04-30 19:24:48] Текст ошибки Exception! | Файл S:\laragon\www\shop\public\index.php | Строка 12
+[2026-04-30 19:25:34] Текст ошибки Undefined variable $some | Файл S:\laragon\www\shop\public\index.php | Строка 13
+[2026-04-30 19:27:01] Текст ошибки Undefined variable $some | Файл S:\laragon\www\shop\public\index.php | Строка 13
