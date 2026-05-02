@@ -10,7 +10,7 @@ class ErrorHandler
         if(DEBUG){
             error_reporting(E_ALL);
         } else{
-            error_reporting(false);
+            error_reporting(0);
         }
         set_exception_handler([$this, 'exceptionHandler']);
         set_error_handler([$this, 'errorHandler']);
@@ -34,12 +34,12 @@ class ErrorHandler
             ob_end_flush();
         }
     }
-    public function errorHandler($errno, $errstr, $errfile, $errline)
+    public function errorHandler(int $errno, string $errstr, string $errfile, int $errline): void
     {
         $this->logErrors($errstr, $errfile, $errline);
         $this->displayError($errno, $errstr, $errfile, $errline);
     }
-    protected function logErrors($message = "", $file = "", $line = "")
+    protected function logErrors(string $message, string $file, int $line): void
     {
         $data = "[". date("Y-m-d H:i:s") . "] Текст ошибки {$message} | Файл {$file} | Строка {$line}" 
             . "\n";

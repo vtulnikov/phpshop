@@ -10,11 +10,13 @@ class App
 
     public function __construct()
     {
+        $query = trim(urldecode($_SERVER['QUERY_STRING']), "/");
+
         new ErrorHandler();
         self::$app = Registry::getInstance();
         $this->setParams();
+        Router::dispatch($query);
     }
-
     public function setParams(){
         $paramsFile = CONFIG . "/params.php";
         if(!file_exists($paramsFile)){

@@ -5,10 +5,10 @@ define("ROOT", dirname(__DIR__));
 define("WWW", ROOT . "/public");
 define("APP", ROOT . "/app");
 define("CORE", ROOT . "/core");
-define("HELPERS", CORE . "/helpers");
+define("HELPERS", CORE . "/vvt/helpers");
 define("CACHE", ROOT . "/tmp/cache");
 define("LOGS", ROOT . "/tmp/logs");
-define("CONFIG", ROOT . "/config"); // или ROOT . "/config" можно было написать
+define("CONFIG", ROOT . "/config");
 define("LAYOUT", "myShop");
 define("PATH", "http://shop.loc");
 define("ADMIN", "http://shop.loc/admin");

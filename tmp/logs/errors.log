@@ -17,3 +17,97 @@
 [2026-04-30 19:24:48] Текст ошибки Exception! | Файл S:\laragon\www\shop\public\index.php | Строка 12
 [2026-04-30 19:25:34] Текст ошибки Undefined variable $some | Файл S:\laragon\www\shop\public\index.php | Строка 13
 [2026-04-30 19:27:01] Текст ошибки Undefined variable $some | Файл S:\laragon\www\shop\public\index.php | Строка 13
+[2026-05-01 19:04:48] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:04:49] Текст ошибки Uncaught TypeError: vvt\ErrorHandler::displayError(): Argument #1 ($errno) must be of type int, string given, called in S:\laragon\www\shop\core\vvt\ErrorHandler.php on line 24 and defined in S:\laragon\www\shop\core\vvt\ErrorHandler.php:48
+Stack trace:
+#0 S:\laragon\www\shop\core\vvt\ErrorHandler.php(24): vvt\ErrorHandler->displayError('\xD0\x98\xD1\x81\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0...', 'Class "Router" ...', 'S:\\laragon\\www\\...', 20, 0)
+#1 [internal function]: vvt\ErrorHandler->exceptionHandler(Object(Error))
+#2 {main}
+  thrown | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 48
+[2026-05-01 19:04:49] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:04:49] Текст ошибки Uncaught TypeError: vvt\ErrorHandler::displayError(): Argument #1 ($errno) must be of type int, string given, called in S:\laragon\www\shop\core\vvt\ErrorHandler.php on line 24 and defined in S:\laragon\www\shop\core\vvt\ErrorHandler.php:48
+Stack trace:
+#0 S:\laragon\www\shop\core\vvt\ErrorHandler.php(24): vvt\ErrorHandler->displayError('\xD0\x98\xD1\x81\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0...', 'Class "Router" ...', 'S:\\laragon\\www\\...', 20, 0)
+#1 [internal function]: vvt\ErrorHandler->exceptionHandler(Object(Error))
+#2 {main}
+  thrown | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 48
+[2026-05-01 19:05:44] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:05:44] Текст ошибки Uncaught TypeError: vvt\ErrorHandler::displayError(): Argument #1 ($errno) must be of type int, string given, called in S:\laragon\www\shop\core\vvt\ErrorHandler.php on line 24 and defined in S:\laragon\www\shop\core\vvt\ErrorHandler.php:48
+Stack trace:
+#0 S:\laragon\www\shop\core\vvt\ErrorHandler.php(24): vvt\ErrorHandler->displayError('\xD0\x98\xD1\x81\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0...', 'Class "Router" ...', 'S:\\laragon\\www\\...', 20, 0)
+#1 [internal function]: vvt\ErrorHandler->exceptionHandler(Object(Error))
+#2 {main}
+  thrown | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 48
+[2026-05-01 19:05:44] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:05:44] Текст ошибки Uncaught TypeError: vvt\ErrorHandler::displayError(): Argument #1 ($errno) must be of type int, string given, called in S:\laragon\www\shop\core\vvt\ErrorHandler.php on line 24 and defined in S:\laragon\www\shop\core\vvt\ErrorHandler.php:48
+Stack trace:
+#0 S:\laragon\www\shop\core\vvt\ErrorHandler.php(24): vvt\ErrorHandler->displayError('\xD0\x98\xD1\x81\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0...', 'Class "Router" ...', 'S:\\laragon\\www\\...', 20, 0)
+#1 [internal function]: vvt\ErrorHandler->exceptionHandler(Object(Error))
+#2 {main}
+  thrown | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 48
+[2026-05-01 19:05:45] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:05:45] Текст ошибки Uncaught TypeError: vvt\ErrorHandler::displayError(): Argument #1 ($errno) must be of type int, string given, called in S:\laragon\www\shop\core\vvt\ErrorHandler.php on line 24 and defined in S:\laragon\www\shop\core\vvt\ErrorHandler.php:48
+Stack trace:
+#0 S:\laragon\www\shop\core\vvt\ErrorHandler.php(24): vvt\ErrorHandler->displayError('\xD0\x98\xD1\x81\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0...', 'Class "Router" ...', 'S:\\laragon\\www\\...', 20, 0)
+#1 [internal function]: vvt\ErrorHandler->exceptionHandler(Object(Error))
+#2 {main}
+  thrown | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 48
+[2026-05-01 19:05:45] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:05:45] Текст ошибки Uncaught TypeError: vvt\ErrorHandler::displayError(): Argument #1 ($errno) must be of type int, string given, called in S:\laragon\www\shop\core\vvt\ErrorHandler.php on line 24 and defined in S:\laragon\www\shop\core\vvt\ErrorHandler.php:48
+Stack trace:
+#0 S:\laragon\www\shop\core\vvt\ErrorHandler.php(24): vvt\ErrorHandler->displayError('\xD0\x98\xD1\x81\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0...', 'Class "Router" ...', 'S:\\laragon\\www\\...', 20, 0)
+#1 [internal function]: vvt\ErrorHandler->exceptionHandler(Object(Error))
+#2 {main}
+  thrown | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 48
+[2026-05-01 19:07:02] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:07:02] Текст ошибки Uncaught TypeError: vvt\ErrorHandler::displayError(): Argument #1 ($errno) must be of type int, string given, called in S:\laragon\www\shop\core\vvt\ErrorHandler.php on line 24 and defined in S:\laragon\www\shop\core\vvt\ErrorHandler.php:48
+Stack trace:
+#0 S:\laragon\www\shop\core\vvt\ErrorHandler.php(24): vvt\ErrorHandler->displayError('\xD0\x98\xD1\x81\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0...', 'Class "Router" ...', 'S:\\laragon\\www\\...', 20, 0)
+#1 [internal function]: vvt\ErrorHandler->exceptionHandler(Object(Error))
+#2 {main}
+  thrown | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 48
+[2026-05-01 19:07:02] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:07:02] Текст ошибки Uncaught TypeError: vvt\ErrorHandler::displayError(): Argument #1 ($errno) must be of type int, string given, called in S:\laragon\www\shop\core\vvt\ErrorHandler.php on line 24 and defined in S:\laragon\www\shop\core\vvt\ErrorHandler.php:48
+Stack trace:
+#0 S:\laragon\www\shop\core\vvt\ErrorHandler.php(24): vvt\ErrorHandler->displayError('\xD0\x98\xD1\x81\xD0\xBA\xD0\xBB\xD1\x8E\xD1\x87\xD0\xB5\xD0...', 'Class "Router" ...', 'S:\\laragon\\www\\...', 20, 0)
+#1 [internal function]: vvt\ErrorHandler->exceptionHandler(Object(Error))
+#2 {main}
+  thrown | Файл S:\laragon\www\shop\core\vvt\ErrorHandler.php | Строка 48
+[2026-05-01 19:07:57] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:07:57] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:08:57] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:12:27] Текст ошибки Class "vvt\vvt\Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-01 19:12:42] Текст ошибки Class "Router" not found | Файл S:\laragon\www\shop\core\vvt\App.php | Строка 20
+[2026-05-02 11:41:16] Текст ошибки preg_match(): Unknown modifier '?' | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 33
+[2026-05-02 11:44:04] Текст ошибки preg_match(): Unknown modifier '?' | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 33
+[2026-05-02 12:40:40] Текст ошибки Undefined array key "controller" | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 44
+[2026-05-02 13:08:41] Текст ошибки Undefined array key "controller" | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 41
+[2026-05-02 13:08:41] Текст ошибки Undefined array key "controller" | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 41
+[2026-05-02 13:10:15] Текст ошибки Undefined array key "controller" | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 41
+[2026-05-02 13:10:15] Текст ошибки Undefined array key "controller" | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 41
+[2026-05-02 13:38:53] Текст ошибки Undefined array key "controller" | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 43
+[2026-05-02 15:13:11] Текст ошибки preg_match(): No ending delimiter '^' found | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 33
+[2026-05-02 15:13:12] Текст ошибки preg_match(): No ending delimiter '^' found | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 33
+[2026-05-02 15:20:10] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 29
+[2026-05-02 15:20:22] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 29
+[2026-05-02 15:20:34] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 29
+[2026-05-02 15:32:25] Текст ошибки Array to string conversion | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 27
+[2026-05-02 15:43:11] Текст ошибки Контроллер app\controllers\admin\SomeController не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 32
+[2026-05-02 15:43:17] Текст ошибки Контроллер app\controllers\MainController не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 32
+[2026-05-02 15:43:17] Текст ошибки Контроллер app\controllers\MainController не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 32
+[2026-05-02 15:48:40] Текст ошибки Object of class app\controllers\MainController could not be converted to string | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 34
+[2026-05-02 15:49:07] Текст ошибки Object of class app\controllers\MainController could not be converted to string | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 34
+[2026-05-02 15:50:04] Текст ошибки Метод app\controllers\MainController::indexAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 34
+[2026-05-02 16:12:39] Текст ошибки Контроллер app\controllers\admin\MainController не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 37
+[2026-05-02 16:12:39] Текст ошибки Контроллер app\controllers\admin\MainController не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 37
+[2026-05-02 16:15:15] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 40
+[2026-05-02 16:15:21] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 40
+[2026-05-02 16:15:24] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 34
+[2026-05-02 16:24:29] Текст ошибки vvt\Router::matchRoute(): Argument #1 ($url) must be of type string, null given, called in S:\laragon\www\shop\core\vvt\Router.php on line 35 | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 16:25:03] Текст ошибки vvt\Router::matchRoute(): Argument #1 ($url) must be of type string, null given, called in S:\laragon\www\shop\core\vvt\Router.php on line 35 | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 16:25:48] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 49
+[2026-05-02 16:29:10] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 16:29:21] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 16:31:11] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 16:32:45] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
+[2026-05-02 18:01:13] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45

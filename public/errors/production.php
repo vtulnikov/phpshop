@@ -7,7 +7,7 @@
 <body>
 
 <h1>Произошла ошибка</h1>
-<p><a href="<?=PATH;?>">Go back to Home</a></p>
+<p><a href="<?=PATH;?>">Вернуться на главную</a></p>
 
 </body>
 </html>
