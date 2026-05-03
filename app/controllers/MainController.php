@@ -2,10 +2,12 @@
 
 namespace app\controllers;
 
-class MainController
+use vvt\Controller;
+
+class MainController extends Controller
 {
     public function indexAction()
     {
-        echo __METHOD__;
+        
     }
 }

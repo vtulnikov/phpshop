@@ -13,4 +13,3 @@ require_once CONFIG . "/routes.php";
 new App();
 
 echo "Все ОК";
-debug(Router::getRoutes());

@@ -4,14 +4,14 @@ namespace vvt;
 
 use Exception;
 
-class App
+final class App
 {
     public static Registry $app;
 
     public function __construct()
     {
         $query = trim(urldecode($_SERVER['QUERY_STRING']), "/");
-
+        
         new ErrorHandler();
         self::$app = Registry::getInstance();
         $this->setParams();

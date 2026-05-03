@@ -2,9 +2,11 @@
 
 namespace app\controllers;
 
-class PageController
+use vvt\Controller;
+
+class PageController extends Controller
 {
-    public function indexAction()
+    public function viewAction()
     {
         echo "Какая-то страница";
     }

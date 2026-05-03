@@ -2,7 +2,7 @@
 
 namespace vvt;
 
-class Registry
+final class Registry
 {
     use TSingleton;
 

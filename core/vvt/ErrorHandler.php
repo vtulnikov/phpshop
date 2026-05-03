@@ -3,7 +3,7 @@ namespace vvt;
 
 use Throwable;
 
-class ErrorHandler
+final class ErrorHandler
 {
     public function __construct()
     {

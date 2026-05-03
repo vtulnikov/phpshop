@@ -111,3 +111,46 @@ Stack trace:
 [2026-05-02 16:31:11] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
 [2026-05-02 16:32:45] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
 [2026-05-02 18:01:13] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
+[2026-05-02 18:17:18] Текст ошибки Метод app\controllers\PageController::vieAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
+[2026-05-02 18:17:25] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
+[2026-05-02 18:17:30] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
+[2026-05-02 18:17:48] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
+[2026-05-02 18:18:22] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:20:02] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:20:07] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 46
+[2026-05-02 18:20:07] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 46
+[2026-05-02 18:22:28] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:23:07] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:23:14] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:23:39] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:23:46] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 46
+[2026-05-02 18:23:46] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 46
+[2026-05-02 18:25:04] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:25:16] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:26:10] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 51
+[2026-05-02 18:26:19] Текст ошибки Метод app\controllers\PageController::viewAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
+[2026-05-02 18:26:37] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 51
+[2026-05-02 18:26:38] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 51
+[2026-05-02 18:26:38] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 51
+[2026-05-02 18:26:44] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 51
+[2026-05-02 18:26:45] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 51
+[2026-05-02 18:27:05] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:29:50] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-02 18:31:53] Текст ошибки Метод app\controllers\PageController::vAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 45
+[2026-05-02 18:44:59] Текст ошибки Метод app\controllers\PageController::vAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 46
+[2026-05-02 20:05:19] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 51
+[2026-05-02 20:05:34] Текст ошибки Контроллер app\controllers\admin\PageController не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 48
+[2026-05-02 20:06:36] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 51
+[2026-05-02 20:06:45] Текст ошибки Контроллер app\controllers\ProductController не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 48
+[2026-05-03 16:33:07] Текст ошибки Typed property vvt\Controller::$model must not be accessed before initialization | Файл S:\laragon\www\shop\app\controllers\MainController.php | Строка 12
+[2026-05-03 16:33:07] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
+[2026-05-03 16:35:05] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
+[2026-05-03 16:35:08] Текст ошибки Контроллер app\controllers\ProductController не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-03 18:29:16] Текст ошибки Typed property vvt\Controller::$model must not be accessed before initialization | Файл S:\laragon\www\shop\core\vvt\Controller.php | Строка 20
+[2026-05-03 18:29:19] Текст ошибки Typed property vvt\Controller::$model must not be accessed before initialization | Файл S:\laragon\www\shop\core\vvt\Controller.php | Строка 20
+[2026-05-03 18:29:19] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
+[2026-05-03 18:29:27] Текст ошибки Typed property vvt\Controller::$model must not be accessed before initialization | Файл S:\laragon\www\shop\core\vvt\Controller.php | Строка 20
+[2026-05-03 18:30:17] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
+[2026-05-03 18:34:05] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
+[2026-05-03 18:34:13] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
+[2026-05-03 18:39:34] Текст ошибки Typed property vvt\Controller::$model must not be accessed before initialization | Файл S:\laragon\www\shop\app\controllers\MainController.php | Строка 11
