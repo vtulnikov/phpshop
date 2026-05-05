@@ -154,3 +154,26 @@ Stack trace:
 [2026-05-03 18:34:05] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
 [2026-05-03 18:34:13] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
 [2026-05-03 18:39:34] Текст ошибки Typed property vvt\Controller::$model must not be accessed before initialization | Файл S:\laragon\www\shop\app\controllers\MainController.php | Строка 11
+[2026-05-04 05:21:00] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 55
+[2026-05-04 05:56:35] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 64
+[2026-05-04 10:11:37] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-04 16:22:48] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-04 19:35:30] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-04 19:36:25] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-04 19:36:44] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-04 19:41:13] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-04 19:41:29] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-04 19:49:14] Текст ошибки Не найден вид S:\laragon\www\shop/app/view/Main/index.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 34
+[2026-05-04 19:51:55] Текст ошибки Не найден вид S:\laragon\www\shop/app/views/Page/view.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 34
+[2026-05-04 20:10:40] Текст ошибки syntax error, unexpected token "}" | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
+[2026-05-04 20:10:53] Текст ошибки syntax error, unexpected token "}" | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
+[2026-05-04 20:11:03] Текст ошибки Не найден вид S:\laragon\www\shop/app/views/Page/view.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 36
+[2026-05-04 20:15:41] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 43
+[2026-05-04 20:15:41] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 43
+[2026-05-04 20:16:51] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 43
+[2026-05-05 14:31:01] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-05 14:51:23] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
+[2026-05-05 14:54:25] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
+[2026-05-05 17:19:47] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
+[2026-05-05 17:19:57] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/myShop.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
+[2026-05-05 17:33:19] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44

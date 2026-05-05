@@ -5,5 +5,7 @@
             "app\\": "app"
         }
     },
-    "require": {}
+    "require": {
+        "symfony/var-dumper": "^8.0"
+    }
 }

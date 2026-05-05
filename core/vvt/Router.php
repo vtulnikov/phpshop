@@ -21,39 +21,15 @@ class Router
     {
         return self::$route;
     }
-    protected static function removeQueryParams(string $url):string
+    protected static function removeQueryParams(string $url): string
     {
-        if($url){
+        if ($url) {
             $params = explode("&", $url, 2);
-            if(false == str_contains($params[0], "=")){
+            if (false == str_contains($params[0], "=")) {
                 return rtrim($params[0], "/");
             }
         }
         return "";
-    }
-    public static function dispatch(string $url)
-    {
-        $url = self::removeQueryParams($url);
-        if (self::matchRoute($url)) {
-            $controller = "app\\controllers\\" . self::$route['admin_prefix'] . self::$route['controller'] . "Controller";
-            if (class_exists($controller)) {
-                $controllerObject = new $controller(self::$route);
-
-                /** @var Controller $controllerObject *///указываем, что $controllerObject является объектом класса Controller
-                $controllerObject->getModel();
-
-                $action = self::toLowerCamelCase(self::$route['action']) . "Action";
-                if (method_exists($controllerObject, $action)) {
-                    $controllerObject->$action();
-                } else {
-                    throw new Exception("Метод {$controller}::{$action} не найден", 404);
-                }
-            } else {
-                throw new Exception("Контроллер {$controller} не найден", 404);
-            }
-        } else {
-            throw new Exception("Страница не найдена", 404);
-        }
     }
     public static function matchRoute(string $url): bool
     {
@@ -69,7 +45,7 @@ class Router
                 /** 
                  * нам нужен admin_prefix (или пустой) для того, чтобы формировать адрес классов Model and View
                  * мы будем его формировать в классе Controller->getModel()
-                */
+                 */
                 $route['admin_prefix'] = (!isset($route['admin_prefix'])) ? "" : $route['admin_prefix'] . "\\";
 
                 $routeParams += $route;
@@ -80,6 +56,34 @@ class Router
         }
         return false;
     }
+    public static function dispatch(string $url)
+    {
+        $url = self::removeQueryParams($url);
+        if (!self::matchRoute($url)) {
+            throw new Exception("Страница не найдена", 404);
+        }
+        $controller = "app\\controllers\\"
+            . self::$route['admin_prefix']
+            . self::$route['controller']
+            . "Controller";
+
+        if (!class_exists($controller)) {
+            throw new Exception("Контроллер {$controller} не найден", 404);
+        }
+
+        $controllerObject = new $controller(self::$route);
+
+        /** @var Controller $controllerObject */ //указываем, что $controllerObject является объектом класса Controller
+        $controllerObject->getModel();
+        $action = self::toLowerCamelCase(self::$route['action']) . "Action";
+
+        if (!method_exists($controllerObject, $action)) {
+            throw new Exception("Метод {$controller}::{$action} не найден", 404);
+        }
+        $controllerObject->$action();
+        $controllerObject->getView();
+    }
+
     protected static function toUpperCamelCase(string $str): string
     {
         // Заменяем дефисы на пробелы, делаем каждое слово с заглавной, убираем пробелы
