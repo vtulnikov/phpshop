@@ -1,7 +1,6 @@
 <?php
 
 use vvt\App;
-use vvt\Router;
 
 if(phpversion() < 8.3) {
     die("Необходима версия php > 8.4");

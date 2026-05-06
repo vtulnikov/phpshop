@@ -177,3 +177,23 @@ Stack trace:
 [2026-05-05 17:19:47] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
 [2026-05-05 17:19:57] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/myShop.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
 [2026-05-05 17:33:19] Текст ошибки Не найден шаблон S:\laragon\www\shop/app/views/layouts/test.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 44
+[2026-05-05 19:36:23] Текст ошибки syntax error, unexpected token ";", expecting ")" | Файл S:\laragon\www\shop\app\views\layouts\myShop.php | Строка 14
+[2026-05-06 05:22:52] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-06 05:33:15] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-06 05:33:50] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-06 06:04:06] Текст ошибки Class "Db" not found | Файл S:\laragon\www\shop\app\controllers\MainController.php | Строка 13
+[2026-05-06 06:05:22] Текст ошибки SQLSTATE[HY000] [2019] Unknown character set | Файл S:\laragon\www\shop\config\config-db.php | Строка 15
+[2026-05-06 06:07:08] Текст ошибки SQLSTATE[HY000] [2019] Unknown character set | Файл S:\laragon\www\shop\config\config-db.php | Строка 15
+[2026-05-06 06:07:09] Текст ошибки SQLSTATE[HY000] [2019] Unknown character set | Файл S:\laragon\www\shop\config\config-db.php | Строка 15
+[2026-05-06 06:07:09] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-06 06:07:42] Текст ошибки SQLSTATE[HY000] [2019] Unknown character set | Файл S:\laragon\www\shop\config\config-db.php | Строка 15
+[2026-05-06 06:11:27] Текст ошибки SQLSTATE[HY000] [2019] Unknown character set | Файл S:\laragon\www\shop\core\vvt\Db.php | Строка 14
+[2026-05-06 06:13:16] Текст ошибки SQLSTATE[HY000] [2019] Unknown character set | Файл S:\laragon\www\shop\core\vvt\Db.php | Строка 14
+[2026-05-06 06:13:17] Текст ошибки SQLSTATE[HY000] [2019] Unknown character set | Файл S:\laragon\www\shop\core\vvt\Db.php | Строка 14
+[2026-05-06 06:13:17] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-06 06:40:00] Текст ошибки Class "R" not found | Файл S:\laragon\www\shop\core\vvt\Db.php | Строка 14
+[2026-05-06 07:10:13] Текст ошибки No connection to DB | Файл S:\laragon\www\shop\core\vvt\Db.php | Строка 18
+[2026-05-06 15:02:05] Текст ошибки SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.name' doesn't exist | Файл S:\laragon\www\shop\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка 206
+[2026-05-06 16:47:34] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-06 16:51:44] Текст ошибки SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.names' doesn't exist | Файл S:\laragon\www\shop\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка 206
+[2026-05-06 16:55:59] Текст ошибки Call to a member function find() on null | Файл S:\laragon\www\shop\vendor\gabordemooij\redbean\RedBeanPHP\Facade.php | Строка 1055

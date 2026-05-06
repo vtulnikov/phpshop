@@ -37,12 +37,19 @@ class View
             throw new Exception("Не найден вид " . $viewFile, 500);
         }
         if(false !== $this->layout){
-            $layoutFile = APP . "/views/layouts/{$this->layout}.php";
+            $layoutFile = APP . "/views/Layouts/{$this->layout}.php";
             if(is_file($layoutFile)){
                 require_once $layoutFile;
             } else{
                 throw new Exception("Не найден шаблон " . $layoutFile, 500);
             }
         }
+    }
+    public function getMeta()
+    {
+        $out = "<title>" . htmlspecialchars($this->meta['title'] ). "</title>" . PHP_EOL;
+        $out .= '<meta name="description" content=" ' . htmlspecialchars( $this->meta['description'] ) . '" />' . PHP_EOL;
+        $out .= '<meta name="keywords" content = " ' . htmlspecialchars( $this->meta['keywords'] ) . '" />' . PHP_EOL;
+        return $out;
     }
 }

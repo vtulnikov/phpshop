@@ -27,7 +27,7 @@ abstract class Controller
         $this->view = $this->view ?: $this->route['action'];
         ( new View($this->route, $this->layout, $this->view, $this->meta) )->render($this->data);
     }
-    public function set(array $data)
+    public function setData(array $data)
     {
         $this->data = $data;
     }
