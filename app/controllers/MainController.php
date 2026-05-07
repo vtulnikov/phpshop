@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use vvt\Controller;
 use app\models\Main;
+use RedBeanPHP\R;
 
 /** @property Main $model */
 

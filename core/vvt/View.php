@@ -2,7 +2,7 @@
 
 namespace vvt;
 
-use Exception;
+use RedBeanPHP\R;
 
 class View
 {
@@ -34,14 +34,14 @@ class View
             require_once $viewFile;
             $this->content = ob_get_clean();
         } else{
-            throw new Exception("Не найден вид " . $viewFile, 500);
+            throw new \Exception("Не найден вид " . $viewFile, 500);
         }
         if(false !== $this->layout){
             $layoutFile = APP . "/views/Layouts/{$this->layout}.php";
             if(is_file($layoutFile)){
                 require_once $layoutFile;
             } else{
-                throw new Exception("Не найден шаблон " . $layoutFile, 500);
+                throw new \Exception("Не найден шаблон " . $layoutFile, 500);
             }
         }
     }
@@ -51,5 +51,26 @@ class View
         $out .= '<meta name="description" content=" ' . htmlspecialchars( $this->meta['description'] ) . '" />' . PHP_EOL;
         $out .= '<meta name="keywords" content = " ' . htmlspecialchars( $this->meta['keywords'] ) . '" />' . PHP_EOL;
         return $out;
+    }
+    public function getDBLogs()
+    {
+        if(DEBUG){
+            $logs = R::getDatabaseAdapter()
+            ->getDatabase()
+            ->getLogger(); //все работает, хз почему не видит этот метод
+            return array_merge($logs->grep('SELECT'), $logs->grep('INSERT'), 
+                               $logs->grep('UPDATE'), $logs->grep('DELETE'));
+        }
+    }
+    public function getTemplatePart(string $file, $data = null)
+    {
+        if(is_array($data)) extract($data);
+        $file = APP . "/views/{$file}.php";
+        if(is_file($file)) {
+            require $file; //не через require once на случай, если понадобится несколько раз какой-то файл подключать
+        } else{
+            echo "Файл {$file} не найден";
+        }
+
     }
 }

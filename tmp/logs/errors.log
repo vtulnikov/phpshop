@@ -197,3 +197,8 @@ Stack trace:
 [2026-05-06 16:47:34] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
 [2026-05-06 16:51:44] Текст ошибки SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.names' doesn't exist | Файл S:\laragon\www\shop\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка 206
 [2026-05-06 16:55:59] Текст ошибки Call to a member function find() on null | Файл S:\laragon\www\shop\vendor\gabordemooij\redbean\RedBeanPHP\Facade.php | Строка 1055
+[2026-05-07 18:46:35] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-07 18:57:12] Текст ошибки Array to string conversion | Файл S:\laragon\www\shop\app\views\Layouts\myShop.php | Строка 17
+[2026-05-07 19:02:19] Текст ошибки SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.name' doesn't exist | Файл S:\laragon\www\shop\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка 206
+[2026-05-07 19:03:06] Текст ошибки SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.shop' doesn't exist | Файл S:\laragon\www\shop\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка 206
+[2026-05-07 19:03:48] Текст ошибки SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`users WHERE id=2' at line 1 | Файл S:\laragon\www\shop\vendor\gabordemooij\redbean\RedBeanPHP\Driver\RPDO.php | Строка 206
