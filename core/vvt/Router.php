@@ -75,11 +75,12 @@ class Router
 
         /** @var Controller $controllerObject */ //указываем, что $controllerObject является объектом класса Controller
         $controllerObject->getModel();
-        $action = self::toLowerCamelCase(self::$route['action']) . "Action";
 
+        $action = self::toLowerCamelCase(self::$route['action']) . "Action";
         if (!method_exists($controllerObject, $action)) {
             throw new Exception("Метод {$controller}::{$action} не найден", 404);
         }
+
         $controllerObject->$action();
         $controllerObject->getView();
     }

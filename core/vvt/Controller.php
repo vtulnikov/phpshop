@@ -25,11 +25,11 @@ abstract class Controller
     public function getView():void
     {
         $this->view = $this->view ?: $this->route['action'];
-        ( new View($this->route, $this->layout, $this->view, $this->meta) )->render($this->data);
+        new View($this->route, $this->layout, $this->view, $this->meta)->render($this->data);
     }
     public function setData(array $data)
     {
-        $this->data = $data;
+        $this->data = $data; //получаем, н-р, из MainController данные со сладами из БД и передаем их в View через getView в методе render($data)
     }
     public function setMeta($title = "", $description = "", $keywords = ""):void
     {

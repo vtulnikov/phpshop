@@ -31,7 +31,7 @@ class View
         $viewFile = APP . "/views/{$prefix}{$this->route['controller']}/{$this->view}.php";
         if(is_file($viewFile)){
             ob_start();
-            require_once $viewFile;
+            require $viewFile;
             $this->content = ob_get_clean();
         } else{
             throw new \Exception("Не найден вид " . $viewFile, 500);
@@ -39,7 +39,7 @@ class View
         if(false !== $this->layout){
             $layoutFile = APP . "/views/Layouts/{$this->layout}.php";
             if(is_file($layoutFile)){
-                require_once $layoutFile;
+                require $layoutFile;
             } else{
                 throw new \Exception("Не найден шаблон " . $layoutFile, 500);
             }
@@ -65,7 +65,7 @@ class View
     public function getTemplatePart(string $file, $data = null)
     {
         if(is_array($data)) extract($data);
-        $file = APP . "/views/{$file}.php";
+        $file = APP . "/views/Template-parts/{$file}.php";
         if(is_file($file)) {
             require $file; //не через require once на случай, если понадобится несколько раз какой-то файл подключать
         } else{
