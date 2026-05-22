@@ -34,7 +34,7 @@ abstract class Controller
     public function setMeta($title = "", $description = "", $keywords = ""):void
     {
         $this->meta = [
-            "title" => $title,
+            "title" => App::$app->getProperty('shop_title') . " :: " . $title,
             "description" => $description,
             "keywords" => $keywords
         ];

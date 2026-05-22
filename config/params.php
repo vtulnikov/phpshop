@@ -2,6 +2,6 @@
 
 return [
     'admin_email' => 'admin@shop.loc',
-    'shop_title' => 'Мой хороший магазин',
+    'shop_title' => 'MyShop',
     'pagination' => 3
 ];
