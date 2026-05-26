@@ -8,13 +8,13 @@ final class Registry
 
     private static array $properties = [];
 
-    public function setProperty($name, $value)
+    public function setProperty(string $name, array|string $value)
     {
         self::$properties[$name] = $value;
     }
-    public function getProperty($name)
+    public function getProperty(string $name, mixed $default = null):mixed
     {
-        return self::$properties[$name];
+        return self::$properties[$name] ?? $default;
     }
     public function getProperties()
     {

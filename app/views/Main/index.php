@@ -3,24 +3,27 @@
 /** @var array $slides  
  * @var vvt\View $this
 */
-
-
 //debug($slides); 
 ?>
 <div class="container-fluid my-carousel">
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-indicators">
+            <?php if(!empty($slides)): ?>
             <?php for ($i = 0; $i < count($slides); $i++) : ?>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $i ?>" <?php if ($i == 0) echo 'class="active"'; ?> aria-current="true" aria-label="Slide <?= $i ?>"></button>
             <?php endfor; ?>
         </div>
         <div class="carousel-inner">
-            <?php $i = 1;
+            <?php 
+            //добавляем слайдер
+            $i = 1;
             foreach ($slides as $slide) : ?>
                 <div class="carousel-item <?php if ($i == 1) echo 'active'; ?>">
                     <img src="<?= PATH . $slide->img ?>" class="d-block w-100" alt="...">
                 </div>
             <?php $i++;   endforeach; ?>
+            <?php endif; ?>
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -33,14 +36,14 @@
     </div>
 </div>
 
-<?php if(!empty($products)) :?>
+<?php if(!empty($hits)) :?>
 <section class="featured-products">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h3 class="section-title">Рекомендуемые товары</h3>
             </div>
-                <?php $this->getTemplatePart('products_loop', ['products' => $products]); ?>
+                <?php $this->getTemplatePart('default/products_loop', compact('hits')); //либо передать ['products' => $products]?>
 
         </div>
     </div>

@@ -34,10 +34,24 @@ final class ErrorHandler
             ob_end_flush();
         }
     }
-    public function errorHandler(int $errno, string $errstr, string $errfile, int $errline): void
+    public function errorHandler(int $errno, string $errstr, string $errfile, int $errline): bool
     {
+        // Если уровень ошибки не включён в error_reporting, отдаём обработку PHP
+        if (!(error_reporting() & $errno)) {
+            return false;
+        }
+
         $this->logErrors($errstr, $errfile, $errline);
+
+        // В режиме разработки не останавливаем скрипт на предупреждениях
+        if (DEBUG && ($errno === E_WARNING || $errno === E_NOTICE || $errno === E_DEPRECATED)) {
+            // Возвращаем false, чтобы PHP вывел стандартное сообщение (если display_errors=On)
+            // или true, чтобы подавить вывод, но продолжить выполнение
+            return false; 
+        }
+        // Критические ошибки или production → показываем страницу и останавливаем
         $this->displayError($errno, $errstr, $errfile, $errline);
+        return true;
     }
     protected function logErrors(string $message, string $file, int $line): void
     {
