@@ -451,3 +451,51 @@ Stack trace:
 [2026-05-22 17:44:37] Текст ошибки Undefined variable $products | Файл S:\laragon\www\shop\app\views\Template-parts\products_loop.php | Строка 6
 [2026-05-22 17:45:07] Текст ошибки Undefined variable $products | Файл S:\laragon\www\shop\app\views\Template-parts\products_loop.php | Строка 6
 [2026-05-22 17:45:07] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 06:57:05] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 06:57:06] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 06:57:25] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 06:57:25] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 06:59:16] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 06:59:27] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:00:31] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:02:24] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 64
+[2026-05-27 07:04:13] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 64
+[2026-05-27 07:07:14] Текст ошибки Метод app\controllers\ProductController::iphoneAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 81
+[2026-05-27 07:07:14] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:07:40] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:11:55] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:12:00] Текст ошибки Метод app\controllers\ProductController::iphoneAction не найден | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 81
+[2026-05-27 07:27:10] Текст ошибки Undefined array key "controller" | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 52
+[2026-05-27 07:27:36] Текст ошибки Не найден вид S:\laragon\www\shop/app/views/Product/view.php | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 37
+[2026-05-27 07:28:08] Текст ошибки Call to a member function getDatabase() on null | Файл S:\laragon\www\shop\core\vvt\View.php | Строка 59
+[2026-05-27 07:30:01] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:02] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:02] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:06] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:06] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:57] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:57] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:57] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:57] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:30:57] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:31:03] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:31:05] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:31:31] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 63
+[2026-05-27 07:34:09] Текст ошибки Undefined array key "shop-title" | Файл S:\laragon\www\shop\core\vvt\Registry.php | Строка 17
+[2026-05-27 07:46:34] Текст ошибки Class "app\widgets\language\Language" not found | Файл S:\laragon\www\shop\app\controllers\AppController.php | Строка 15
+[2026-05-27 07:47:23] Текст ошибки Non-static method app\widgets\language\Language::getLangs() cannot be called statically | Файл S:\laragon\www\shop\app\controllers\AppController.php | Строка 15
+[2026-05-27 08:15:56] Текст ошибки Undefined array key "lang" | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 50
+[2026-05-27 08:21:17] Текст ошибки syntax error, unexpected token "}" | Файл S:\laragon\www\shop\app\widgets\language\Language.php | Строка 24
+[2026-05-27 08:38:24] Текст ошибки Неизвестный языкfr | Файл S:\laragon\www\shop\app\widgets\language\Language.php | Строка 30
+[2026-05-27 08:41:19] Текст ошибки Too few arguments to function app\widgets\language\Language::getLang(), 0 passed in S:\laragon\www\shop\app\controllers\AppController.php on line 19 and exactly 1 expected | Файл S:\laragon\www\shop\app\widgets\language\Language.php | Строка 21
+[2026-05-27 12:30:56] Текст ошибки Неизвестный язык dsfasdf | Файл S:\laragon\www\shop\app\widgets\language\Language.php | Строка 35
+[2026-05-27 12:33:13] Текст ошибки Неизвестный язык dsfasdf | Файл S:\laragon\www\shop\app\widgets\language\Language.php | Строка 35
+[2026-05-27 12:48:34] Текст ошибки syntax error, unexpected end of file | Файл S:\laragon\www\shop\app\widgets\language\lang_tpl.php | Строка 19
+[2026-05-27 12:49:26] Текст ошибки Undefined array key "code" | Файл S:\laragon\www\shop\app\widgets\language\lang_tpl.php | Строка 12
+[2026-05-27 12:49:30] Текст ошибки Undefined array key "code" | Файл S:\laragon\www\shop\app\widgets\language\lang_tpl.php | Строка 12
+[2026-05-27 12:50:22] Текст ошибки Undefined array key "code" | Файл S:\laragon\www\shop\app\widgets\language\lang_tpl.php | Строка 12
+[2026-05-27 12:50:28] Текст ошибки Undefined array key "code" | Файл S:\laragon\www\shop\app\widgets\language\lang_tpl.php | Строка 12
+[2026-05-27 12:50:28] Текст ошибки Undefined array key "code" | Файл S:\laragon\www\shop\app\widgets\language\lang_tpl.php | Строка 12
+[2026-05-27 12:56:30] Текст ошибки Cannot access offset of type string on string | Файл S:\laragon\www\shop\app\widgets\language\lang_tpl.php | Строка 15
+[2026-05-27 12:57:43] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 64
+[2026-05-27 12:57:43] Текст ошибки Страница не найдена | Файл S:\laragon\www\shop\core\vvt\Router.php | Строка 64
