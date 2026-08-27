@@ -25,7 +25,7 @@ class View
     }
     public function render(array $data)
     {
-        if(is_array($data)) extract($data);
+        extract($data);
 
         $prefix = str_replace("\\", "/", $this->route['admin_prefix']);
         $viewFile = APP . "/views/{$prefix}{$this->route['controller']}/{$this->view}.php";
