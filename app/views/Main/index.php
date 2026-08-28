@@ -15,9 +15,9 @@
             <?php endfor; ?>
         </div>
         <div class="carousel-inner">
-            <?php for($i = 1; $i <= count($slides); $i++):?>
-                <div class="carousel-item <?php if ($i == 1) echo 'active'; ?>">
-                    <img src="<?= PATH . $slides[$i]->img ?>" class="d-block w-100" alt="...">
+            <?php for($i = 0; $i < count($slides); $i++):?>
+                <div class="carousel-item <?php if ($i == 0) echo 'active'; ?>">
+                    <img src="<?= PATH . $slides[$i]['img'] ?>" class="d-block w-100" alt="...">
                 </div>
             <?php endfor; ?>
         </div>
