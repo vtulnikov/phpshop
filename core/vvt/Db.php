@@ -11,7 +11,7 @@ class Db
 
     public function __construct()
     {
-        $config = require_once CONFIG . "/config-db.php";
+        $config = require CONFIG . "/config-db.php";
         $dsn = "mysql:host={$config['host']};dbname={$config['db_name']};charset={$config['charset']}";
         R::setup($dsn, $config['db_user'], $config['password']);
         if (!R::testConnection()) {

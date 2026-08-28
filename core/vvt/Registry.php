@@ -12,9 +12,9 @@ final class Registry
     {
         self::$properties[$name] = $value;
     }
-    public function getProperty($name)
+    public function getProperty(string $name, $default = null)
     {
-        return self::$properties[$name];
+        return self::$properties[$name] ?? $default;
     }
     public function getProperties()
     {

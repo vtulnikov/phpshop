@@ -36,9 +36,7 @@ class Router
         foreach (self::$routes as $regexp => $route) {
             if (preg_match("~{$regexp}~", $url, $matches)) {
                 //оставляем только строковые ключи. ARRAY_FILTER_USE_KEY - берем ключи, а не значения
-                $routeParams = array_filter($matches, fn($k) => is_string($k), ARRAY_FILTER_USE_KEY);
-
-                //добавляем action по умолчанию для тех урлов, у которых его не будет site.ru/category
+                $routeParams = array_filter($matches, fn($k) => is_string($k), ARRAY_FILTER_USE_KEY);                //добавляем action по умолчанию для тех урлов, у которых его не будет site.ru/category
                 if (empty($route['action'])) {
                     $route['action'] = 'index';
                 }
@@ -46,11 +44,12 @@ class Router
                  * нам нужен admin_prefix (или пустой) для того, чтобы формировать адрес классов Model and View
                  * мы будем его формировать в классе Controller->getModel()
                  */
-                $route['admin_prefix'] = (!isset($route['admin_prefix'])) ? "" : $route['admin_prefix'] . "\\";
-
+                $route['admin_prefix'] = !isset($route['admin_prefix']) ? "" : $route['admin_prefix'] . "\\";
+                
                 $routeParams += $route;
                 $routeParams['controller'] = self::toUpperCamelCase($routeParams['controller']);
                 self::$route = $routeParams;
+                
                 return true;
             }
         }
@@ -61,6 +60,9 @@ class Router
         $url = self::removeQueryParams($url);
         if (!self::matchRoute($url)) {
             throw new Exception("Страница не найдена", 404);
+        }
+        if(!empty(self::$route['lang'])){
+            App::$app->setProperty('lang', self::$route['lang']);
         }
         $controller = "app\\controllers\\"
             . self::$route['admin_prefix']

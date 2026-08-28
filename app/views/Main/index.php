@@ -5,7 +5,7 @@
 */
 
 
-//debug($slides); 
+// dump($slides); 
 ?>
 <div class="container-fluid my-carousel">
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
@@ -32,15 +32,14 @@
     </div>
 </div>
 
-<?php if(!empty($products)) :?>
+<?php if(!empty($hits)) :?>
 <section class="featured-products">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h3 class="section-title">Рекомендуемые товары</h3>
             </div>
-                <?php $this->getTemplatePart('products_loop', ['products' => $products]); ?>
-
+                <?php $this->getTemplatePart('products_loop', compact('hits') ); ?>
         </div>
     </div>
 </section>

@@ -1,4 +1,3 @@
 # Composer
 /vendor/
-/tmp/logs/
-/composer.phar
+/tmp/

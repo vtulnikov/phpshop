@@ -1,9 +1,9 @@
 <?php
 
-/**   @var array $products */
+/**   @var array $hits */
 
 ?>
-<?php foreach ($products as $hit):; ?>
+<?php foreach ($hits as $hit):; ?>
     <div class="col-lg-4 col-sm-6 mb-3">
         <div class="product-card">
             <div class="product-tumb">
