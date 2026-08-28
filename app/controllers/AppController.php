@@ -16,8 +16,5 @@ class AppController extends Controller
          * если нет соответствующей модели для контроллера, обрабатывающего текущую страницу
          */
         new AppModel(); 
-        App::$app->setProperty('languages', Language::getLangs());
-        App::$app->setProperty('language', Language::getLang( App::$app->getProperty('languages') ));
-        // debug(App::$app->getProperty('languages'));
     }
 }
