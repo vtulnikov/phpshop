@@ -21,7 +21,7 @@
                 <li><i class="fas fa-shipping-fast text-muted"></i> Ожидается</li>
                 <li><i class="fas fa-hand-holding-usd"></i> <span class="product-price"><small>$250.00</small>$230.99</li>
             </ul>
-
+ 
             <div id="product">
                 <div class="input-group mb-3">
                     <input id="input-quantity" type="text" class="form-control" name="quantity" value="1">
