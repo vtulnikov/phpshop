@@ -1,8 +1,8 @@
 <?php
 
 use app\widgets\language\Language;
-use vvt\App;
 use vvt\View;
+use vvt\App;
 
 /** 
  * @var View $this View;

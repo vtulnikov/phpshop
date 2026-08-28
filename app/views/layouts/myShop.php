@@ -6,6 +6,6 @@ use vvt\View;
  * @var View $this View;
  */
 
-$this->getTemplatePart('header');
+$this->getTemplatePart('default/header');
 echo $this->content ; 
-$this->getTemplatePart('footer'); ?>
+$this->getTemplatePart('default/footer'); ?>

@@ -11,9 +11,13 @@ class AppController extends Controller
     public function __construct(array $route)
     {
         parent::__construct($route);
-        new AppModel();
-
+        /**
+         * создаем подключение к БД, чтобы в футере метод getDBLogs() не выкидывал ошибку, 
+         * если нет соответствующей модели для контроллера, обрабатывающего текущую страницу
+         */
+        new AppModel(); 
         App::$app->setProperty('languages', Language::getLangs());
-        App::$app->setProperty('language', Language::getLang(App::$app->getProperty('languages')));
+        App::$app->setProperty('language', Language::getLang( App::$app->getProperty('languages') ));
+        debug(App::$app->getProperty('languages'));
     }
 }

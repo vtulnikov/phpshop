@@ -10,6 +10,7 @@
 <div class="container-fluid my-carousel">
     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-indicators">
+            <?php if(!empty($slides)): ?>
             <?php for ($i = 0; $i < count($slides); $i++) : ?>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $i ?>" <?php if ($i == 0) echo 'class="active"'; ?> aria-current="true" aria-label="Slide <?= $i ?>"></button>
             <?php endfor; ?>
@@ -39,7 +40,8 @@
             <div class="col-12">
                 <h3 class="section-title">Рекомендуемые товары</h3>
             </div>
-                <?php $this->getTemplatePart('products_loop', compact('hits') ); ?>
+                <?php $this->getTemplatePart('default/products_loop', compact('hits')); //либо передать ['products' => $products]?>
+
         </div>
     </div>
 </section>

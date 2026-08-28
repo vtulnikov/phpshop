@@ -55,17 +55,17 @@ class View
     public function getDBLogs()
     {
         if(DEBUG){
-            $logs = R::getDatabaseAdapter()
-            ->getDatabase()
-            ->getLogger(); //все работает, хз почему не видит этот метод
-            return array_merge($logs->grep('SELECT'), $logs->grep('INSERT'), 
-                               $logs->grep('UPDATE'), $logs->grep('DELETE'));
+                $logs = R::getDatabaseAdapter()
+                ->getDatabase()
+                ->getLogger(); //все работает, хз почему не видит этот метод
+                return array_merge($logs->grep('SELECT'), $logs->grep('INSERT'), 
+                                $logs->grep('UPDATE'), $logs->grep('DELETE')); 
         }
     }
     public function getTemplatePart(string $file, $data = null)
     {
         if(is_array($data)) extract($data);
-        $file = APP . "/views/Template-parts/{$file}.php";
+        $file = APP . "/views/{$file}.php";
         if(is_file($file)) {
             require $file; //не через require once на случай, если понадобится несколько раз какой-то файл подключать
         } else{

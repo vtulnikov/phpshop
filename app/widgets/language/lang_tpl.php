@@ -1,18 +1,18 @@
-<?php
-
-use vvt\App;
-?>
 <div class="dropdown d-inline-block">
     <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-        <img src="<?= PATH; ?>/assets/img/<?= App::$app->getProperty('language')['code'] ?>.png" alt="">
+        <img src="<?= PATH; ?>/assets/img/lang/<?= $this->lang['code'] ?>.png" alt="">
     </a>
     <ul class="dropdown-menu" id="languages">
-        <?php foreach(App::$app->getProperty('languages') as $lang => $value): ?>
-            <?php if($lang == App::$app->getProperty('language')['code']) continue; ?>
+        <?php foreach($this->langs as $lang => $value) : ?>
+            
+            <?php 
+            //убираем из выпадающего списка активный язык 
+            if($this->lang['code'] == $lang) continue; 
+            ?>
         <li>
-            <button class="dropdown-item" data-langcode="<?= $lang; ?>">
-                <img src="<?= PATH; ?>/assets/img/<?= $lang; ?>.png" alt="">
-                <?= $value['title']; ?></button>
+            <button class="dropdown-item" data-langcode="<?= $lang ?>">
+                <img src="<?= PATH; ?>/assets/img/lang/<?= $lang ?>.png" alt="">
+                <?= $value['title'] ?></button>
         </li>
         <?php endforeach; ?>
     </ul>
