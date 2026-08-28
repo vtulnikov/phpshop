@@ -39,7 +39,7 @@
             <div class="col-12">
                 <h3 class="section-title">Рекомендуемые товары</h3>
             </div>
-                <?php $this->getTemplatePart('default/products_loop', compact('hits')); //либо передать ['products' => $products]?>
+                <?php $this->getTemplatePart('Templete-parts/products-loop', compact('hits')); //либо передать ['products' => $products]?>
 
         </div>
     </div>
