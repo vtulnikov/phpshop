@@ -27,7 +27,7 @@
             </div>
 
         </div>
-
+    
         <div class="col-md-8 order-md-1">
             <ul class="thumbnails list-unstyled clearfix">
                 <li class="thumb-main text-center"><a class="thumbnail" href="assets/img/products/apple_cinema_30.jpg" data-effect="mfp-zoom-in"><img src="assets/img/products/imac_1.jpg" alt=""></a></li>
