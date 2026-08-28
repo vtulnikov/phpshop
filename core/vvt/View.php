@@ -47,9 +47,9 @@ class View
     }
     public function getMeta()
     {
-        $out = "<title>" . htmlspecialchars($this->meta['title'] ). "</title>" . PHP_EOL;
-        $out .= '<meta name="description" content=" ' . htmlspecialchars( $this->meta['description'] ) . '" />' . PHP_EOL;
-        $out .= '<meta name="keywords" content = " ' . htmlspecialchars( $this->meta['keywords'] ) . '" />' . PHP_EOL;
+        $out = "<title>" . h($this->meta['title'] ) . "</title>" . PHP_EOL;
+        $out .= '    <meta name="description" content=" ' . h( $this->meta['description'] ) . '" />' . PHP_EOL;
+        $out .= '    <meta name="keywords" content = " ' . h( $this->meta['keywords'] ) . '" />' . PHP_EOL;
         return $out;
     }
     public function getDBLogs()
@@ -62,7 +62,7 @@ class View
                                $logs->grep('UPDATE'), $logs->grep('DELETE'));
         }
     }
-    public function getTemplatePart(string $file, $data = null)
+    public function getTemplatePart(string $file, ?array $data = null)
     {
         if(is_array($data)) extract($data);
         $file = APP . "/views/Template-parts/{$file}.php";

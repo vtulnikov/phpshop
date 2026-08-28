@@ -15,12 +15,11 @@
             <?php endfor; ?>
         </div>
         <div class="carousel-inner">
-            <?php $i = 1;
-            foreach ($slides as $slide) : ?>
+            <?php for($i = 1; $i <= count($slides); $i++) : ?>
                 <div class="carousel-item <?php if ($i == 1) echo 'active'; ?>">
-                    <img src="<?= PATH . $slide->img ?>" class="d-block w-100" alt="...">
+                    <img src="<?= PATH . $slides[$i]->img ?>" class="d-block w-100" alt="...">
                 </div>
-            <?php $i++;   endforeach; ?>
+            <?php endfor; ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
