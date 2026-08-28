@@ -8,7 +8,6 @@
     </nav>
 </div>
 
-
 <div class="container py-3">
     <div class="row">
         <div class="col-md-4 order-md-2">
@@ -25,7 +24,6 @@
                     <button class="btn btn-danger" type="button" id="button-addon2">Купить</button>
                 </div>
             </div>
-
         </div>
     
         <div class="col-md-8 order-md-1">
@@ -43,6 +41,5 @@
             <p>Quo nihil in doloremque, cupiditate quam sunt inventore, nesciunt asperiores provident deleniti, explicabo fugit maiores accusantium omnis sed amet? Quos optio sit delectus architecto vero accusantium tenetur, ducimus, nobis ad.</p>
             <p>Asperiores, commodi provident eum sed repellat ut recusandae optio est dicta praesentium facere culpa unde obcaecati eveniet laborum amet nulla distinctio consectetur, iste, ipsum, soluta. Explicabo, repudiandae nemo ab quasi.</p>
         </div>
-
     </div>
 </div>
