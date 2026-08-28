@@ -32,10 +32,8 @@
         </div>
 
         <div class="col-md-8 order-md-1">
-
             <ul class="thumbnails list-unstyled clearfix">
                 <li class="thumb-main text-center"><a class="thumbnail" href="assets/img/products/apple_cinema_30.jpg" data-effect="mfp-zoom-in"><img src="assets/img/products/imac_1.jpg" alt=""></a></li>
-
                 <li class="thumb-additional"><a class="thumbnail" href="assets/img/products/1.jpg" data-effect="mfp-zoom-in"><img src="assets/img/products/1.jpg" alt=""></a></li>
                 <li class="thumb-additional"><a class="thumbnail" href="assets/img/products/2.jpg" data-effect="mfp-zoom-in"><img src="assets/img/products/2.jpg" alt=""></a></li>
                 <li class="thumb-additional"><a class="thumbnail" href="assets/img/products/3.jpg" data-effect="mfp-zoom-in"><img src="assets/img/products/3.jpg" alt=""></a></li>
@@ -47,8 +45,6 @@
             <p>Explicabo, culpa, sit! Quod eum, aperiam odit reiciendis repellendus vitae, quam laboriosam possimus fugiat rerum facilis dolor, molestiae magnam culpa numquam praesentium soluta molestias quaerat officiis, fuga aliquam! Quidem, possimus.</p>
             <p>Quo nihil in doloremque, cupiditate quam sunt inventore, nesciunt asperiores provident deleniti, explicabo fugit maiores accusantium omnis sed amet? Quos optio sit delectus architecto vero accusantium tenetur, ducimus, nobis ad.</p>
             <p>Asperiores, commodi provident eum sed repellat ut recusandae optio est dicta praesentium facere culpa unde obcaecati eveniet laborum amet nulla distinctio consectetur, iste, ipsum, soluta. Explicabo, repudiandae nemo ab quasi.</p>
-
-
         </div>
 
     </div>
