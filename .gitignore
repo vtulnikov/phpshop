@@ -1,6 +1,4 @@
 # Composer
 /vendor/
 /composer.phar
-# Разрешаем папку и ее содержимое
-!/vendor/vvt/
-!/vendor/vvt/**
+/tmp/
