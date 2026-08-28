@@ -51,13 +51,13 @@ final class ErrorHandler
         http_response_code($response);
 
         if($response == 404 && (!DEBUG)){
-            require_once WWW . "/errors/404.php";
+            require_once PUBLIC_DIR . "/errors/404.php";
             die;
         }
         if(DEBUG) {
-            require_once WWW . "/errors/development.php";
+            require_once PUBLIC_DIR . "/errors/development.php";
         } else{
-            require_once WWW . "/errors/production.php";
+            require_once PUBLIC_DIR . "/errors/production.php";
         }
         die;
     }

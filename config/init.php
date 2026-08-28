@@ -2,12 +2,12 @@
 
 define("DEBUG", 1);
 define("ROOT", dirname(__DIR__));
-define("WWW", ROOT . "/public");
+define("PUBLIC_DIR", ROOT . "/public");
 define("APP", ROOT . "/app");
 define("CORE", ROOT . "/core");
 define("HELPERS", CORE . "/vvt/helpers");
 define("CACHE", ROOT . "/tmp/cache");
-define("LOGS", ROOT . "/tmp/logs");
+define("LOGS", PUBLIC_DIR . "/tmp/logs");
 define("CONFIG", ROOT . "/config");
 define("LAYOUT", "myShop");
 define("PATH", "http://shop.loc");
