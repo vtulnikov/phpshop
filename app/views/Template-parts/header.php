@@ -27,9 +27,9 @@ use vvt\View;
 
 <body>
     <header class="fixed-top">
-        <div class="header-top py-3">
+        <div class="header-top py-2">
             <div class="container">
-                <div class="row justify-content-between">
+                <div class="row justify-content-between align-items-center">
                     <div class="col">
                         <a href="tel:5551234567">
                             <span class="icon-phone">&#9743;</span> 555 123-45-67
@@ -68,7 +68,7 @@ use vvt\View;
         </div><!-- header-top -->
 
         <div class="header-bottom py-2">
-            <div class="container">
+            <div class="container ">
 
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid p-0">
