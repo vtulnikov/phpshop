@@ -2,7 +2,9 @@
 namespace app\controllers;
 
 use app\models\AppModel;
+use app\widgets\languages\Language;
 use vvt\Controller;
+use vvt\App;
 
 class AppController extends Controller
 {
@@ -13,6 +15,8 @@ class AppController extends Controller
          * создаем подключение к БД, чтобы в футере метод getDBLogs() не выкидывал ошибку, 
          * если нет соответствующей модели для контроллера, обрабатывающего текущую страницу
          */
-        new AppModel(); 
+        new AppModel();
+        App::$app->setProperty('languages', Language::getLanguages());
+        // dump(App::$app->getProperty('languages'));
     }
 }

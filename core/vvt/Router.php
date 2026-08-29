@@ -61,7 +61,7 @@ class Router
         if (!self::matchRoute($url)) {
             throw new Exception("Страница не найдена", 404);
         }
-        if(!empty(self::$route['lang'])){
+        if (!empty(self::$route['lang'])) {
             App::$app->setProperty('lang', self::$route['lang']);
         }
         $controller = "app\\controllers\\"
