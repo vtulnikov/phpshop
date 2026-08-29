@@ -12,7 +12,7 @@ use vvt\View;
 <html lang="ru">
 
 <head>
-    <base href="/">
+    <base href="<?= getBaseUrl() ?>">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?= PATH; ?>/assets/bootstrap/css/bootstrap.min.css">
@@ -73,7 +73,7 @@ use vvt\View;
 
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid p-0">
-                        <a class="navbar-brand" href="/"><?= App::$app->getProperty('shop_title') ?></a>
+                        <a class="navbar-brand" href="<?= getBaseUrl() ?>"><?= App::$app->getProperty('shop_title') ?></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>

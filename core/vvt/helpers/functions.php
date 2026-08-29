@@ -15,3 +15,7 @@ function redirect($url = "")
     header("Location: {$redirect}");
     die;
 }
+function getBaseUrl():string
+{
+    return PATH . '/' . (vvt\App::$app->getProperty('lang') ? vvt\App::$app->getProperty('lang') . '/' : '');
+}

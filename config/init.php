@@ -7,7 +7,7 @@ define("APP", ROOT . "/app");
 define("CORE", ROOT . "/core");
 define("HELPERS", CORE . "/vvt/helpers");
 define("CACHE", ROOT . "/tmp/cache");
-define("LOGS", PUBLIC_DIR . "/tmp/logs");
+define("LOGS", ROOT . "/tmp/logs");
 define("CONFIG", ROOT . "/config");
 define("LAYOUT", "myShop");
 define("PATH", "http://shop.loc");
