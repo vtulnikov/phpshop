@@ -9,3 +9,9 @@ function h(string $data)
 {
     return htmlspecialchars($data);
 }
+function redirect($url = "")
+{
+    $redirect = $url ?: PATH;
+    header("Location: {$redirect}");
+    die;
+}
