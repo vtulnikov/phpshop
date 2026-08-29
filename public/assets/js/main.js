@@ -38,5 +38,8 @@ $(function() {
 			}
 		}
 	});
-
+	$('#languages button').on('click', function () {
+		const langCode = $(this).data('langcode');
+		window.location = PATH + "/language/change?lang=" + langCode;
+	})
 });
