@@ -17,7 +17,7 @@ function redirect($url = "")
     header("Location: {$redirect}");
     die;
 }
-function checkUrlLanguage($request_uri)
+function checkUrlLanguage(string $request_uri)
 {
     $path = trim($request_uri, "/");
     $url_parts = explode("/", $path, 2);
@@ -25,4 +25,8 @@ function checkUrlLanguage($request_uri)
         return "/" . $url_parts[1];
     }
     return $request_uri;
+}
+function getBaseURl()
+{
+    return PATH . '/' . (App::$app->getProperty('lang') ? App::$app->getProperty('lang') . '/' : "");
 }
