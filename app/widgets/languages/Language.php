@@ -35,8 +35,8 @@ class Language
         } elseif(!$lang){
             $key = array_key_first($languages);
         } else{
-            //TODO:передавать урл без языка
-            redirect();
+            $url = checkUrlLanguage($_SERVER['REQUEST_URI']);
+            redirect(PATH . $url);
         } 
         $lang_info = $languages[$key];
         $lang_info['code'] = $key;
