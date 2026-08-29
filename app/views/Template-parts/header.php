@@ -62,8 +62,6 @@ use vvt\View;
                                 <li><a class="dropdown-item" href="#">Регистрация</a></li>
                             </ul>
                         </div>
-
-                        <?php new Language(); ?>
                     </div>
                 </div>
             </div>
