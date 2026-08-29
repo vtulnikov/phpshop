@@ -1,5 +1,6 @@
 <?php
 
+use app\widgets\languages\Language;
 use vvt\View;
 
 /** 
@@ -60,8 +61,8 @@ use vvt\View;
                                 <li><a class="dropdown-item" href="#">Регистрация</a></li>
                             </ul>
                         </div>
-
-                        <div class="dropdown d-inline-block">
+                        <?php new Language; ?>
+                        <!-- <div class="dropdown d-inline-block">
                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                                 <img src="<?= PATH; ?>/assets/img/lang/ru.png" alt="">
                             </a>
@@ -72,7 +73,7 @@ use vvt\View;
                                         English</button>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
