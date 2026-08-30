@@ -10,7 +10,7 @@ class LanguageController extends AppController
 {
     public function changeAction()
     {
-        $lang = $_GET['lang'] ?? null;
+        $lang = get('lang', 's');
         $validLanguages = App::$app->getProperty('languages');
         $baseLanguage = App::$app->getProperty('language')['code'];
 
