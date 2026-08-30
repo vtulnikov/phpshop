@@ -37,7 +37,7 @@ use vvt\View;
                     <div class="col text-end icons">
                         <form>
                             <div class="input-group" id="search">
-                                <input type="text" class="form-control" placeholder="Search..." name="s">
+                                <input type="text" class="form-control" placeholder="<?= getTranslatedPart('tpl_search') ?>" name="s">
                                 <button class="btn close-search" type="button"><i class="fas fa-times"></i></i></button>
                                 <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                             </div>
@@ -57,8 +57,8 @@ use vvt\View;
                                 <i class="far fa-user"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Авторизация</a></li>
-                                <li><a class="dropdown-item" href="#">Регистрация</a></li>
+                                <li><a class="dropdown-item" href="#"><?= getTranslatedPart('tpl_login') ?></a></li>
+                                <li><a class="dropdown-item" href="#"><?= getTranslatedPart('tpl_signup') ?></a></li>
                             </ul>
                         </div>
                         <?php new Language; ?>
@@ -72,7 +72,7 @@ use vvt\View;
 
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="container-fluid p-0">
-                        <a class="navbar-brand" href="<?= getBaseURl() ?>"><?php echo vvt\App::$app->getProperty('shop_title') ?></a>
+                        <a class="navbar-brand" href="<?= getBaseURl() ?>"><?= vvt\App::$app->getProperty('shop_title') ?></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>

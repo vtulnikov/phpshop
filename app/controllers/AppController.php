@@ -19,5 +19,9 @@ class AppController extends Controller
         App::$app->setProperty('languages', Language::getLanguages());
         $currentLanguageInfo = Language::getLanguage(App::$app->getProperty('languages'));
         App::$app->setProperty('language', $currentLanguageInfo);
+        
+        $lang = App::$app->getProperty('language');
+        \vvt\Language::load($lang['code'], $this->route);
+        dump(\vvt\Language::$data);
     }
 }

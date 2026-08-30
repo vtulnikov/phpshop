@@ -60,3 +60,7 @@ function post(string $key, string $type = 'i')
         default => throw new  InvalidArgumentException("Неизвестный тип данных: {$type}")
     };
 }
+function getTranslatedPart(string $key):string
+{
+    return \vvt\Language::get($key);
+}
