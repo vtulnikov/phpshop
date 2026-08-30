@@ -28,3 +28,37 @@ function checkUrlLanguage(string $request_uri)
     }
     return $request_uri;
 }
+/**
+ * Возвращает значение из массива $_GET по ключу
+ *
+ * @param string $type Допустимые значения: 'i' (int), 'f' (float), 's' (string).
+ * @return int|float|string
+ */
+function get(string $key, string $type = 'i')
+{
+    $value = $_GET[$key] ?? '';
+
+    return match($type){
+        'i' => (int) $value,
+        'f' => (float) $value,
+        's' => (string) $value,
+        default => throw new InvalidArgumentException('Неизвестный тип данных')
+    };
+}
+/**
+ * Возвращает значение из массива $_POST по ключу
+ *
+ * @param string $type Допустимые значения: 'i' (int), 'f' (float), 's' (string).
+ * @return int|float|string
+ */
+function post(string $key, string $type = 'i')
+{
+    $value = $_POST[$key] ?? '';
+
+    return match($type){
+        'i' => (int) $value,
+        'f' => (float) $value,
+        's' => (string) $value,
+        default => throw new InvalidArgumentException('Неизвестный тип данных')
+    };
+}
