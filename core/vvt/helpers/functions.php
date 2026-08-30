@@ -30,3 +30,33 @@ function getBaseURl()
 {
     return PATH . '/' . (App::$app->getProperty('lang') ? App::$app->getProperty('lang') . '/' : "");
 }
+/**
+ * Получает и приводит параметр из $_GET к нужному типу.
+ * @param string $type Допустимые значения: 'i' (int), 'f' (float), 's' (string).
+ */
+function get(string $key, string $type = 'i')
+{
+    $value = $_GET[$key] ?? '';
+
+    return match($type){
+        'i' => (int) $value,
+        'f' => (float) $value,
+        's' => (string) $value,
+        default => throw new  InvalidArgumentException("Неизвестный тип данных: {$type}")
+    };
+}
+/**
+ * Получает и приводит параметр из $_POST к нужному типу.
+ * @param string $type Допустимые значения: 'i' (int), 'f' (float), 's' (string).
+ */
+function post(string $key, string $type = 'i')
+{
+    $value = $_POST[$key] ?? '';
+
+    return match($type){
+        'i' => (int) $value,
+        'f' => (float) $value,
+        's' => (string) $value,
+        default => throw new  InvalidArgumentException("Неизвестный тип данных: {$type}")
+    };
+}
