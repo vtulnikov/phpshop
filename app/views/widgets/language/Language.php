@@ -15,14 +15,8 @@ class Language
     public function __construct()
     {
         $this->tpl = APP . "/views/widgets/language/lang.tpl.php";
-        $this->run();
-        
-    }
-    public function run()
-    {
         $this->languages = App::$app->getProperty('languages');
         $this->language = App::$app->getProperty('language');
-        echo $this->getHtml();
     }
     public static function getLanguages():array
     {
