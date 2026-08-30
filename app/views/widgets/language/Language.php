@@ -36,8 +36,9 @@ class Language
         } elseif(!$lang){
             $key = array_key_first($languages);
         } else{
-            //TODO редиректим на страницу без языка
-            redirect();
+            //редиректим на страницу без языка
+            $url = checkUrlLanguage($_SERVER['REQUEST_URI']);
+            redirect($url);
         }
         $langInfo = $languages[$key];
         $langInfo['code'] = $key;
