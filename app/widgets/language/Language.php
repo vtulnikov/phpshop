@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace app\views\widgets\language;
+namespace app\widgets\language;
 
 use vvt\App;
 use RedBeanPHP\R;
@@ -14,7 +14,7 @@ class Language
 
     public function __construct()
     {
-        $this->tpl = APP . "/views/widgets/language/lang.tpl.php";
+        $this->tpl = APP . "/widgets/language/lang.tpl.php";
         $this->languages = App::$app->getProperty('languages');
         $this->language = App::$app->getProperty('language');
     }

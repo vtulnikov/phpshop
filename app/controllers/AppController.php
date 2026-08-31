@@ -2,7 +2,7 @@
 namespace app\controllers;
 
 use app\models\AppModel;
-use app\views\widgets\language\Language;
+use app\widgets\language\Language;
 use vvt\App;
 use vvt\Controller;
 
