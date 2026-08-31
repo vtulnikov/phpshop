@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-6">
-                    <h4>Информация</h4>
+                    <h4><?= getTranslatedPart('tpl_info') ?></h4>
                     <ul class="list-unstyled">
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">О магазине</a></li>
@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="col-md-3 col-6">
-                    <h4>Время работы</h4>
+                    <h4><?= getTranslatedPart('tpl_working_hours') ?></h4>
                     <ul class="list-unstyled">
                         <li>г. Казань, ул. Ленина, 12</li>
                         <li>пн-вс: 8:00 - 17:00</li>
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="col-md-3 col-6">
-                    <h4>Контакты</h4>
+                    <h4><?= getTranslatedPart('tpl_contacts') ?></h4>
                     <ul class="list-unstyled">
                         <li><a href="tel:5551234567">555 123-45-67</a></li>
                         <li><a href="tel:5551234567">555 123-45-68</a></li>
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="col-md-3 col-6">
-                    <h4>Мы в сети</h4>
+                    <h4><?= getTranslatedPart('tpl_social') ?></h4>
                     <div class="footer-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
