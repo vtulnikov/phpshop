@@ -1,0 +1,16 @@
+<?php
+declare(strict_types = 1);
+
+namespace app\models;
+
+use RedBeanPHP\R;
+
+class Cart extends AppModel
+{
+    public function getProduct(int $id, string $lang):array
+    {
+        return R::getRow("SELECT p.*, pd.* FROM product as p 
+        JOIN product_description as pd on p.id = pd.product_id 
+        WHERE p.status = 1 AND p.id = ? AND pd.language_id = ?", [$id, $lang]);
+    }
+}
