@@ -13,7 +13,15 @@ function h(string $data)
 }
 function redirect($url = "")
 {
-    $redirect = $url ?? PATH;
+    if($url){
+        $redirect = $url;
+    } else{
+        $redirect = $_SERVER['HTTP_REFERER'] ?? PATH;
+    }
+    if (!filter_var($redirect, FILTER_VALIDATE_URL)) {
+        $redirect = PATH;
+    }
+    
     header("Location: {$redirect}");
     die;
 }

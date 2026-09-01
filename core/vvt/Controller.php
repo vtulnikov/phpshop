@@ -39,4 +39,7 @@ abstract class Controller
             "keywords" => $keywords
         ];
     }
+    public function isAjax(): bool {
+        return ($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'XMLHttpRequest';
+    }
 }

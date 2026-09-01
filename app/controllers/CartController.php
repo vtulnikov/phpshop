@@ -12,14 +12,19 @@ class CartController extends AppController
     public function addAction()
     {
         $lang = App::$app->getProperty('language');
-        var_dump($lang);
         $id = get('id');
         $quantity = get('qauntity');
         
         if(!$id) return false;
         
         $product = $this->model->getProduct($id, $lang['id']);
-        var_dump($product);
-        die;
+        if(!$product) return false;
+
+        $this->model->addToCart($product, $quantity);
+        if($this->isAjax()){
+            var_dump($_SESSION); die;
+            echo "Это аякс запрос";
+        }
+        redirect();
     }
 }
