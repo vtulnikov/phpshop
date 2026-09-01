@@ -8,7 +8,7 @@ class Cache
 {
     use TSingleton;
 
-    public function set(string $key, $data, int $lifeTime = 3600): bool
+    public function set(string $key, mixed $data, int $lifeTime = 3600): bool
     {
         $content['data'] = $data;
         $content['end_time'] = time() + $lifeTime;
