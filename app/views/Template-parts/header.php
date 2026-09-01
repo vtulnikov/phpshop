@@ -82,7 +82,7 @@ use vvt\View;
                             <?php new Menu([
                                 'class' => 'navbar-nav ms-auto mb-2 mb-lg-0',
                                 'cacheKey' => 'topmenu',
-                                'cacheLife' => 30,
+                                'cacheLife' => 10,
                                 ]);
                             ?>
                         </div>

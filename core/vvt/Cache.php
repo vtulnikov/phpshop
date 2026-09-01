@@ -13,8 +13,8 @@ class Cache
         $content['data'] = $data;
         $content['end_time'] = time() + $lifeTime;
 
-        $hash = hash('sha256', $key) . ".txt";
-        $dir = CACHE . '/tmp/cache/' . substr($hash, 0, 2) . '/';
+        $hash = hash('sha256', $key);
+        $dir = CACHE . '/' . substr($hash, 0, 2) . '/';
         /**
          * Если директории нет → пытаемся создать 
          * → если не смогли создать и она всё ещё не существует → возвращаем ошибку.
@@ -53,8 +53,8 @@ class Cache
     }
     private function getFile(string $key):string
     {
-        $hash = hash('sha256', $key) . ".txt";
-        $dir = CACHE . '/tmp/cache/' . substr($hash, 0, 2) . '/';
+        $hash = hash('sha256', $key);
+        $dir = CACHE . '/' . substr($hash, 0, 2) . '/';
         return $dir . $hash;
     }
 }
