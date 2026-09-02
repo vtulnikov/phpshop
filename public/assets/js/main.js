@@ -1,5 +1,10 @@
 $(function() {
 	//CART
+	function showCart(cart) {
+		$('#cart-modal .modal-cart-content').html(cart);
+		const cartModal = new bootstrap.Modal('#cart-modal');//вторым параметром можно передать объект настроек
+		cartModal.show();
+	}
 	$('.add-to-cart').on('click', function (e) {
 		e.preventDefault();
 		const id = $(this).data('id');
@@ -12,7 +17,7 @@ $(function() {
 				quantity
 			},
 			success(res) {
-				console.log(res);
+				showCart(res);
 			},
 			error() {
 				alert("Error");

@@ -1,6 +1,6 @@
 <?php
 /**
- *@var app\views\widgets\language\Language $this
+ *@var app\widgets\language\Language $this
  */
 ?>
 <div class="dropdown d-inline-block">
