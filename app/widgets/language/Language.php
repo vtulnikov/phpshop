@@ -30,7 +30,7 @@ class Language
         } elseif(!$lang){
             $key = array_key_first($languages);
         } else{
-            //редиректим на страницу без языка
+            /* если какой-то левыйы язык, то редиректим на страницу без языка (базовую версию)*/
             $url = checkUrlLanguage($_SERVER['REQUEST_URI']);
             redirect($url);
         }

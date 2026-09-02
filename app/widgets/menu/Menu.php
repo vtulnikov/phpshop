@@ -33,7 +33,7 @@ class Menu
         $cache = Cache::getInstance();
         $this->menuHtml = $cache->get($this->cacheKey . '_' . $this->language['code']);
 
-        if(!$cache->get($this->cacheKey . '_' . $this->language['code'])){
+        if(!$this->menuHtml){
             $this->data = R::getAssoc("SELECT category_id, c.id, c.parent_id, language_id, title, c.slug, content 
                 FROM category_description AS cd
                 JOIN category AS c ON cd.category_id = c.id WHERE cd.language_id = ?", [$this->language['id']]);
@@ -63,7 +63,9 @@ class Menu
     private function checkOptions(array $options):void
     {
         foreach($options as $key => $value){
-            if(!property_exists($this, $key)) continue;
+            if(!property_exists($this, $key)) {
+                throw new  \InvalidArgumentException("Неизвестное свойство - {$key}");   
+            };
             $this->$key = $value;
         }
     }

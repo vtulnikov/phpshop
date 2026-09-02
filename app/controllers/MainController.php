@@ -18,7 +18,6 @@ class MainController extends AppController
 
         // передаем массив ['slides' => .. , и 'hits' => ..] в свойство $data MainController-a
         $this->setData(compact('slides', 'hits'));
-        
         $this->setMeta("Главная страница", "Описание","Ключевые, слова");
     }
 }

@@ -16,11 +16,11 @@ function redirect($url = "")
     } else{
         $redirect = $_SERVER['HTTP_REFERER'] ?? PATH;
     }
-    if(!filter_var($redirect, FILTER_VALIDATE_URL)){
+    if(!filter_var(PATH . $redirect, FILTER_VALIDATE_URL)){
         $redirect = PATH;
     }
 
-    header("Location: {$redirect}");
+    header("Location: {$redirect}", true, 301);
     die;
 }
 function getBaseUrl():string
@@ -30,9 +30,9 @@ function getBaseUrl():string
 function checkUrlLanguage(string $request_uri)
 {
     $path = trim($request_uri, "/");
-    $url_parts = explode("/", $path, 2);
-    if(!array_key_exists($url_parts[0], vvt\App::$app->getProperty('languages'))){
-        return "/" . $url_parts[1];
+    [$lang, $url] = explode("/", $path, 2);
+    if(!array_key_exists($lang, vvt\App::$app->getProperty('languages'))){
+        return "/" . $url;
     }
     return $request_uri;
 }
@@ -69,4 +69,8 @@ function post(string $key, string $type = 'i')
         's' => (string) $value,
         default => throw new InvalidArgumentException('Неизвестный тип данных')
     };
+}
+function getTranslatedPart(string $key):string
+{
+    return \vvt\Language::get($key);
 }

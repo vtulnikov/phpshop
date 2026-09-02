@@ -7,5 +7,5 @@ use vvt\View;
  */
 
 $this->getTemplatePart('header');
-echo $this->content ; 
+echo $this->content; 
 $this->getTemplatePart('footer'); ?>

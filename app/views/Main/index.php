@@ -17,7 +17,7 @@
         <div class="carousel-inner">
             <?php for($i = 1; $i <= count($slides); $i++) : ?>
                 <div class="carousel-item <?php if ($i == 1) echo 'active'; ?>">
-                    <img src="<?= PATH . $slides[$i]->img ?>" class="d-block w-100" alt="...">
+                    <img src="<?= PATH . $slides[$i]->img ?>" class="d-block w-100" alt="">
                 </div>
             <?php endfor; ?>
         </div>
@@ -37,7 +37,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="section-title">Рекомендуемые товары</h3>
+                <h3 class="section-title"><?= getTranslatedPart('main_index_featured_products') ?></h3>
             </div>
                 <?php $this->getTemplatePart('products_loop', compact('hits') ); ?>
         </div>

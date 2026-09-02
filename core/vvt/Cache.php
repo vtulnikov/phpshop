@@ -40,6 +40,7 @@ class Cache
         if (time() <= $content['end_time']) return $content['data'];
 
         unlink($file);
+        //TODO: удалять директорию, если пустая
         return false;
     }
     public function delete(string $key): bool
