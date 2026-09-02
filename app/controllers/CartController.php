@@ -22,9 +22,8 @@ class CartController extends AppController
 
         $this->model->addToCart($product, $quantity);
         if($this->isAjax()){
-            var_dump($_SESSION); die;
-            echo "Это аякс запрос";
+            $this->loadView('modal');
         }
-        redirect();
+        die;
     }
 }

@@ -1,6 +1,10 @@
 $(function () {
-	
 	//CART
+	function showCart(cart) {
+		$('#cart-modal .modal-cart-content').html(cart);
+		const modal = new bootstrap.Modal('#cart-modal');
+		modal.show();
+	}
 	$('.add-to-cart').on('click', function (e) {
 		e.preventDefault();
 		const id = $(this).data('id');
@@ -14,7 +18,7 @@ $(function () {
 				qauntity
 			},
 			success: function (res) {
-				console.log(res);
+				showCart(res);
 			},
 			error: function () {
 				alert("Error");

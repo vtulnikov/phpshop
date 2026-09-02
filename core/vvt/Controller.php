@@ -42,4 +42,12 @@ abstract class Controller
     public function isAjax(): bool {
         return ($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '') === 'XMLHttpRequest';
     }
+    //TODO: если этот метод больше нигде не понадобится, кроме CartController, перенести его туда
+    public function loadView(string $view, array $vars = [])
+    {
+        extract($vars);
+        $prefix = str_replace("\\", "/", $this->route['admin_prefix']);
+        require APP . "/views/{$prefix}{$this->route['controller']}/{$view}.php";
+        die;
+    }
 }
