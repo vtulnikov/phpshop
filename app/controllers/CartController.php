@@ -22,6 +22,13 @@ class CartController extends AppController
         if($this->isAjax()){
             $this->loadView('modal');
         }
-        die;
+        redirect();
+    }
+    public function showAction()
+    {
+        if($this->isAjax()){
+            $this->loadView('modal');
+        }
+        redirect();
     }
 }
