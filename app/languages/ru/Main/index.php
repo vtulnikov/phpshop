@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 return [
     'main_index_title'                     => 'Самый лучший магазин :: главная страница',
@@ -11,4 +12,7 @@ return [
     'main_index_wide_assortment'           => 'Широкий ассортимент товара',
     'main_index_competitive_prices'        => 'Приятные и конкурентные цены',
     'main_index_professional_service'      => 'Профессиональная консультация и сервис',
+    'main_index_meta_title'                => 'Главная страница',
+    'main_index_meta_description'          => 'Описание',
+    'main_index_meta_keywords'             => 'ключевые слова...',
 ];

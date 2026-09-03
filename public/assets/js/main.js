@@ -2,9 +2,23 @@ $(function () {
 	//CART
 	function showCart(cart) {
 		$('#cart-modal .modal-cart-content').html(cart);
-		const modal = new bootstrap.Modal('#cart-modal');
+		const modalElement = document.getElementById('cart-modal');
+		const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
 		modal.show();
 	}
+
+	$('#top-cart').on('click', function (e) {
+		e.preventDefault();
+		$.ajax({
+			url: 'cart/show',
+			success: function (res) {
+				showCart(res);
+			},
+			error: function () {
+				alert("Error");
+			}
+		})
+	})
 	$('.add-to-cart').on('click', function (e) {
 		e.preventDefault();
 		const id = $(this).data('id');

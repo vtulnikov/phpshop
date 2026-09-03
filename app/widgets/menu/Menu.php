@@ -49,9 +49,10 @@ class Menu
     private function checkOptions(array $options):void
     {
         foreach($options as $k => $v){
-            if(property_exists($this, $k)){
-                $this->$k = $v;
+            if(!property_exists($this, $k)){
+                throw new \InvalidArgumentException("Отсутствует свойство $k");
             }
+            $this->$k = $v;
         }
     }
     private function getTree():array

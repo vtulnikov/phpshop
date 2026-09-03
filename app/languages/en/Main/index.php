@@ -11,4 +11,7 @@ return [
     'main_index_wide_assortment'           => 'Wide range of products',
     'main_index_competitive_prices'        => 'Pleasant and competitive prices',
     'main_index_professional_service'      => 'Professional consultation and service',
+    'main_index_meta_title'                => 'Home Page',
+    'main_index_meta_description'          => 'Description',
+    'main_index_meta_keywords'             => 'keywords...',
 ];
