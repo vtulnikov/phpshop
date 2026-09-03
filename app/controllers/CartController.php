@@ -31,4 +31,23 @@ class CartController extends AppController
         }
         redirect();
     }
+    public function deleteAction()
+    {
+        $id = get('id');
+        $this->model->deleteProduct($id);
+        
+        if($this->isAjax()){
+            $this->loadView('modal');
+        }
+        redirect();
+    }
+    public function clearAction()
+    {
+        $this->model->clearCart();
+
+        if($this->isAjax()){
+            $this->loadView('modal');
+        }
+        redirect();
+    }
 }

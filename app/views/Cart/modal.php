@@ -20,7 +20,7 @@
                     <td><a href="product/<?= $item['slug'] ?>"><?= $item['title'] ?></a></td>
                     <td><?= $item['quantity'] ?></td>
                     <td>$<?= $item['price'] ?></td>
-                    <td><a class="del-item" href="cart/delete=?id=<?= $id ?>"><i class="far fa-trash-alt"></i></a></td>
+                    <td><a class="del-item" href="cart/delete=?id=<?= $id ?>" data-id=<?= $id ?>><i class="far fa-trash-alt"></i></a></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
@@ -33,15 +33,13 @@
                 </tr>
             </tbody>
         </table>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary ripple" data-bs-dismiss="modal">Продолжить покупки</button>
+            <button type="button" class="btn btn-success">Оформить заказ</button>
+            <button type="button" id="cart-clear" class="btn btn-danger">Очистить корзину</button>
+        </div>            
     </div>
     <?php else: ?>
-        <h4 class="text-start">Корзина пуста</h4>
-    <?php endif; ?>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-primary ripple" data-bs-dismiss="modal">Продолжить покупки</button>
-    <?php if(!empty($_SESSION['cart'])): ?>
-    <button type="button" class="btn btn-success">Оформить заказ</button>
-    <button type="button" class="btn btn-danger">Очистить корзину</button>
+        <h6 class="text-start">Корзина пуста</h6>
     <?php endif; ?>
 </div>
