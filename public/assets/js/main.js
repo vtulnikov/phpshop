@@ -4,9 +4,41 @@ $(function () {
 		$('#cart-modal .modal-cart-content').html(cart);
 		const modalElement = document.getElementById('cart-modal');
 		const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+
+		//получаем из модалки кол-во товаров и обновляем его в шапке
+		const cartItems = $('.cart-qty').text().trim();
+		cartItems ? $('.count-items').text(cartItems) : $('.count-items').text(0);	
+
 		modal.show();
 	}
-
+	//удаляем товар по клику на иконку удаления
+	$('#cart-modal .modal-cart-content').on('click', '.del-item', function (e) {
+		e.preventDefault();
+		const id = $(this).data('id');
+		$.ajax({
+			url: 'cart/delete',
+			data: {id},
+			success: function (res) {
+				showCart(res);
+			},
+			error: function () {
+				alert("Error");
+			}
+		})
+	})
+	//очищаем корзину по клику на кнопку "Очистить корзину"
+	$('#cart-modal .modal-cart-content #clear-cart').on('click', function (e) {
+		$.ajax({
+			url: 'cart/clear',
+			success: function (res) {
+				showCart(res);
+			},
+			error: function () {
+				alert("Error");
+			}
+		})
+	})
+	//показ корзины по клику на иконку в шапке
 	$('#top-cart').on('click', function (e) {
 		e.preventDefault();
 		$.ajax({
@@ -19,6 +51,7 @@ $(function () {
 			}
 		})
 	})
+	//добавление товара по клику на кнопку корзины (купить типа)
 	$('.add-to-cart').on('click', function (e) {
 		e.preventDefault();
 		const id = $(this).data('id');

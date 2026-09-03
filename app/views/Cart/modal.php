@@ -1,5 +1,5 @@
 <div class="modal-body">
-    <?php if(isset($_SESSION['cart'])): ?>
+    <?php if(!empty($_SESSION['cart'])): ?>
     <div class="table-responsive cart-table">
         <table class="table text-start">
             <thead>
@@ -20,7 +20,7 @@
                     <td><a href="<?= $product['slug'] ?>"><?= $product['title'] ?></a></td>
                     <td><?= $product['quantity'] ?></td>
                     <td><?= $product['price'] ?></td>
-                    <td><a class="del-item" href="cart/delete?id=<?= $id ?>"><i class="far fa-trash-alt"></i></a></td>
+                    <td><a class="del-item" href="cart/delete?id=<?= $id ?>" data-id=<?= $id ?>><i class="far fa-trash-alt"></i></a></td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
@@ -33,15 +33,15 @@
                 </tr>
             </tbody>
         </table>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><?= getTranslatedPart('tpl_cart_btn_continue') ?></button>
+            <?php if(isset($_SESSION['cart'])): ?>
+            <button type="button" class="btn btn-success"><?= getTranslatedPart('tpl_cart_btn_order') ?></button>
+            <button type="button" class="btn btn-danger" id="clear-cart" ><?= getTranslatedPart('tpl_cart_btn_clear') ?></button>
+            <?php endif; ?>
+        </div>
     </div>
     <?php else: ?>
-        <h4 class="text-start">Корзина пуста</h4>
-    <?php endif; ?>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><?= getTranslatedPart('tpl_cart_btn_continue') ?></button>
-    <?php if(isset($_SESSION['cart'])): ?>
-    <button type="button" class="btn btn-success"><?= getTranslatedPart('tpl_cart_btn_order') ?></button>
-    <button type="button" class="btn btn-danger"><?= getTranslatedPart('tpl_cart_btn_clear') ?></button>
+        <h6 class="text-start"><?= getTranslatedPart('tpl_cart_empty') ?></h6>
     <?php endif; ?>
 </div>

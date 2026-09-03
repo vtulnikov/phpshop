@@ -37,8 +37,15 @@ class Cart extends AppModel
             ];
         }
         // $_SESSION['cart.quantity'] = !empty($_SESSION['cart.quantity']) ? $_SESSION['cart.quantity'] + $quantity : 1;
+        
         $_SESSION['cart.quantity'] = ($_SESSION['cart.quantity'] ?? 0) + $quantity;
         $_SESSION['cart.sum'] = ($_SESSION['cart.sum'] ?? 0) + $product['price'] * $quantity;
         return true;
+    }
+    public function delItemFromCart(int $id)
+    {
+        $_SESSION['cart.quantity'] -= $_SESSION['cart'][$id]['quantity'];;
+        $_SESSION['cart.sum'] -= ($_SESSION['cart'][$id]['quantity'] * $_SESSION['cart'][$id]['price']);
+        unset($_SESSION['cart'][$id]);
     }
 }

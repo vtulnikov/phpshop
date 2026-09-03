@@ -47,7 +47,7 @@
     <i class="fas fa-angle-double-up"></i>
 </button>
 
-<div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
