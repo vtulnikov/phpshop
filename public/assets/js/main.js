@@ -1,33 +1,30 @@
 $(function() {
 	//CART
-	const productIds = [];
-	const links = document.querySelectorAll('.add-to-cart');
-
 	function showCart(cart) {
 		$('#cart-modal .modal-cart-content').html(cart);
-		const modalElement = document.getElementById('cart-modal');
-		const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+		/**Наличие атрибутов data-bs-toggle="modal" и data-bs-target="#cart-modal" дает команду 
+		 * JavaScript-ядру Bootstrap: "При клике на этот элемент немедленно открой модальное окно 
+		 * с указанным ID". Поэтому нам не нужно создавать это окно вручную и запускать его
+		 * через  modal.show().*/
+		// const modalElement = document.getElementById('cart-modal');
+		// const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
 
 		const cartCount = $('.cart-qty').text().trim();
 		// cartCount ? $('.count-items').text(cartCount) : $('.count-items').text(0);
 		const cartQty = parseInt(cartCount, 10) || 0; 
 		$('.count-items').text(cartQty)
 		
-		modal.show();
+		// modal.show();
 	}
 	function changeCartIcon(id) {
-		links.forEach(link => {
-			if (link.dataset.id == id) {
-				link.querySelector('i').classList.replace('fa-cart-arrow-down','fa-shopping-cart');
-			}
-		})
+		$(`.add-to-cart[data-id="${id}"`).find('i')
+			.removeClass('fa-cart-arrow-down')
+			.addClass('fa-shopping-cart')
 	}
 	function changeCartIcons() {
-		links.forEach(link => {
-			if (productIds.includes(link.dataset.id)) {
-				link.querySelector('i').classList.replace('fa-cart-arrow-down','fa-shopping-cart');
-			}
-		})
+		$('.add-to-cart').find('i')
+			.removeClass('fa-cart-arrow-down')
+			.addClass('fa-shopping-cart');
 	}
 	//удаляем товар из корзины
 	$('#cart-modal .modal-cart-content').on('click', '.del-item', function (e) {
@@ -38,11 +35,6 @@ $(function() {
 			success(res) {
 				showCart(res);
 				changeCartIcon(id);
-
-				const index = productIds.indexOf(id);
-				if (index != -1) {
-					productIds.splice(index, 1);
-				}
 			},
 			error() {
 				console.log('Ошибка получения данных');
@@ -55,7 +47,6 @@ $(function() {
 			success(res) {
 				showCart(res);
 				changeCartIcons()
-				productIds.length = 0;
 			},
 			error() {
 				console.log('Ошибка получения данных');
@@ -87,9 +78,7 @@ $(function() {
 				quantity
 			},
 			success(res) {
-				showCart(res);
-				productIds.push(String(id));
-				
+				showCart(res);				
 				$this.css('color', '#eb494f');
 				$this.find('i')[0].classList.replace('fa-shopping-cart', 'fa-cart-arrow-down');
 			},

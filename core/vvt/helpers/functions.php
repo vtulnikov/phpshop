@@ -7,7 +7,7 @@ function debug($data, $die = false)
 }
 function h(string $data)
 {
-    return htmlspecialchars($data, ENT_QUOTES);
+    return htmlspecialchars($data ?? "", ENT_QUOTES);
 }
 function redirect($url = "")
 {
