@@ -48,4 +48,19 @@ class Cart extends AppModel
         $_SESSION['cart.sum'] -= ($_SESSION['cart'][$id]['quantity'] * $_SESSION['cart'][$id]['price']);
         unset($_SESSION['cart'][$id]);
     }
+    public static function translateCart(int $lang):void
+    {
+        if(empty($_SESSION['cart'])) return;
+
+        $ids = array_filter(array_keys($_SESSION['cart']), fn($elem) => is_numeric($elem) && intval($elem) > 0 );
+        $ids = implode(",", array_map(fn($elem) => intval($elem), $ids));
+
+        $products = R::getAssoc("SELECT product_id,language_id,title 
+                    FROM product_description 
+                    WHERE product_id IN ($ids) AND language_id = ?", [$lang]);
+            /**@var array $data */ //что IDE не ругалась, хз почему ругается
+        foreach($products as $id => $data){
+            $_SESSION['cart'][$id]['title'] = $data['title'];
+        }
+    }
 }

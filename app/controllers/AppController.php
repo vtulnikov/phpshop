@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 use app\models\AppModel;
+use app\models\Cart;
 use app\widgets\languages\Language;
 use vvt\Controller;
 use vvt\App;
@@ -20,7 +21,7 @@ class AppController extends Controller
         $currentLanguageInfo = Language::getLanguage(App::$app->getProperty('languages'));
         App::$app->setProperty('language', $currentLanguageInfo);
         
-        $lang = App::$app->getProperty('language');
-        \vvt\Language::load($lang['code'], $this->route);
+        \vvt\Language::load($currentLanguageInfo['code'], $this->route);
+        Cart::translateCart($currentLanguageInfo['id']);
     }
 }

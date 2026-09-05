@@ -1,5 +1,7 @@
 $(function () {
 	//CART
+	const productIds = [];
+
 	function showCart(cart) {
 		$('#cart-modal .modal-cart-content').html(cart);
 		const modalElement = document.getElementById('cart-modal');
@@ -8,18 +10,37 @@ $(function () {
 		//получаем из модалки кол-во товаров и обновляем его в шапке
 		const cartItems = $('.cart-qty').text().trim();
 		cartItems ? $('.count-items').text(cartItems) : $('.count-items').text(0);	
-
 		modal.show();
+	}
+	function changeCartIcon(id) {
+		const cartLinks = document.querySelectorAll('.add-to-cart');
+		cartLinks.forEach(link => {
+			if (link.dataset.id == id) {
+				link.querySelector('i').classList.replace('fa-cart-arrow-down','fa-shopping-cart');
+			}
+		});
+	}
+	function changeCartIcons() {
+		const cartLinks = document.querySelectorAll('.add-to-cart');
+		cartLinks.forEach(link => {
+			if (productIds.includes(link.dataset.id)) {
+					link.querySelector('i').classList.replace('fa-cart-arrow-down','fa-shopping-cart');
+				}
+			});
 	}
 	//удаляем товар по клику на иконку удаления
 	$('#cart-modal .modal-cart-content').on('click', '.del-item', function (e) {
 		e.preventDefault();
 		const id = $(this).data('id');
+
 		$.ajax({
 			url: 'cart/delete',
 			data: {id},
 			success: function (res) {
 				showCart(res);
+				changeCartIcon(id);
+				const index = productIds.indexOf(id);
+				if(index != -1)	productIds.splice(index, 1);
 			},
 			error: function () {
 				alert("Error");
@@ -27,11 +48,13 @@ $(function () {
 		})
 	})
 	//очищаем корзину по клику на кнопку "Очистить корзину"
-	$('#cart-modal .modal-cart-content #clear-cart').on('click', function (e) {
+	$('#cart-modal .modal-cart-content').on('click', '#clear-cart', function (e) {
 		$.ajax({
 			url: 'cart/clear',
 			success: function (res) {
 				showCart(res);
+				changeCartIcons();
+				productIds.length = 0;
 			},
 			error: function () {
 				alert("Error");
@@ -66,6 +89,10 @@ $(function () {
 			},
 			success: function (res) {
 				showCart(res);
+				productIds.push(String (id)); //нужно привести к строке, а то includes потом не найдет
+
+				$this.css('color', '#eb494f');
+				$this.find('i')[0].classList.replace('fa-shopping-cart', 'fa-cart-arrow-down');
 			},
 			error: function () {
 				alert("Error");
