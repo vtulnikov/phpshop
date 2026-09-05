@@ -49,7 +49,6 @@ class Router
                 $routeParams += $route;
                 $routeParams['controller'] = self::toUpperCamelCase($routeParams['controller']);
                 self::$route = $routeParams;
-                
                 return true;
             }
         }
