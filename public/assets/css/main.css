@@ -501,6 +501,11 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 
 /* Product */
 
+/***/
+a.add-to-cart:has(> i.fa-cart-arrow-down) {
+    color: #eb494f;
+}
+
 
 /* https://bootstrap-menu.com/detail-basic-hover.html */
 @media all and (min-width: 992px) {

@@ -74,3 +74,12 @@ function getTranslatedPart(string $key):string
 {
     return \vvt\Language::get($key);
 }
+function getCartIcon(int $id)
+{
+    if(!empty($_SESSION['cart']) && array_key_exists($id, $_SESSION['cart'] )){
+        $icon = '<i class="fas fa-cart-arrow-down"></i>';
+    } else{
+        $icon = '<i class="fas fa-shopping-cart"></i>';
+    }
+    return $icon;
+}

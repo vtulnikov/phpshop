@@ -54,4 +54,20 @@ class Cart extends AppModel
             unset($_SESSION['cart']);
         }
     }
+    public static function translateCart(int $lang)
+    {
+        if(empty($_SESSION['cart'])) return;
+
+        $ids = array_filter(array_keys($_SESSION['cart']), fn($val) => is_numeric($val) && intval($val) > 0);
+        $ids = implode(',', array_map(fn($val) => intval($val), $ids));
+
+        $products = R::getAssoc("SELECT product_id, language_id, title 
+            FROM product_description 
+            WHERE product_id IN ($ids) AND language_id = ?",[$lang]);
+
+            /**@var array $data */  //чтоб не ругалась IDE, хз почему подчеркивае
+        foreach($products as $id => $data){
+            $_SESSION['cart'][$id]['title'] = $data['title'];
+        }
+    }
 }

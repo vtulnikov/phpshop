@@ -20,7 +20,7 @@
                         <?= $hit['price'] . " руб."; ?>
                     </div>
                     <div class="product-links">
-                        <a class="add-to-cart" href="cart/add?id=<?= $hit['id'] ?>" data-id=<?= $hit['id'] ?>><i class="fas fa-shopping-cart"></i></a>
+                        <a class="add-to-cart" href="cart/add?id=<?= $hit['id'] ?>" data-id=<?= $hit['id'] ?>><?= getCartIcon($hit['id']) ?></i></a>
                         <a href="#"><i class="far fa-heart"></i></a>
                     </div>
                 </div>
