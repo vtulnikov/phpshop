@@ -1,33 +1,34 @@
 $(function () {
 	//CART
-	const productIds = [];
-
 	function showCart(cart) {
 		$('#cart-modal .modal-cart-content').html(cart);
-		const modalElement = document.getElementById('cart-modal');
-		const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+		
+		/**Наличие атрибутов data-bs-toggle="modal" и data-bs-target="#cart-modal" дает команду 
+		 * JavaScript-ядру Bootstrap: "При клике на этот элемент немедленно открой модальное окно 
+		 * с указанным ID". Поэтому нам не нужно создавать это окно вручную и запускать его
+		 * через  modal.show().*/
 
+		// const modalElement = document.getElementById('cart-modal');
+		// const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+		
 		//получаем из модалки кол-во товаров и обновляем его в шапке
 		const cartItems = $('.cart-qty').text().trim();
-		cartItems ? $('.count-items').text(cartItems) : $('.count-items').text(0);	
-		modal.show();
+		cartItems ? $('.count-items').text(cartItems) : $('.count-items').text(0);
+		
+		// modal.show();
 	}
 	function changeCartIcon(id) {
-		const cartLinks = document.querySelectorAll('.add-to-cart');
-		cartLinks.forEach(link => {
-			if (link.dataset.id == id) {
-				link.querySelector('i').classList.replace('fa-cart-arrow-down','fa-shopping-cart');
-			}
-		});
+		// Находим кнопку и меняем класс у иконки внутри неё
+		$(`.add-to-cart[data-id="${id}"]`).find('i')
+			.removeClass('fa-cart-arrow-down')
+			.addClass('fa-shopping-cart');
 	}
-	function changeCartIcons() {
-		const cartLinks = document.querySelectorAll('.add-to-cart');
-		cartLinks.forEach(link => {
-			if (productIds.includes(link.dataset.id)) {
-					link.querySelector('i').classList.replace('fa-cart-arrow-down','fa-shopping-cart');
-				}
-			});
+	function resetAllCartIcons() {
+		$('.add-to-cart').find('i')
+			.removeClass('fa-cart-arrow-down')
+			.addClass('fa-shopping-cart');
 	}
+	
 	//удаляем товар по клику на иконку удаления
 	$('#cart-modal .modal-cart-content').on('click', '.del-item', function (e) {
 		e.preventDefault();
@@ -39,8 +40,6 @@ $(function () {
 			success: function (res) {
 				showCart(res);
 				changeCartIcon(id);
-				const index = productIds.indexOf(id);
-				if(index != -1)	productIds.splice(index, 1);
 			},
 			error: function () {
 				alert("Error");
@@ -53,8 +52,7 @@ $(function () {
 			url: 'cart/clear',
 			success: function (res) {
 				showCart(res);
-				changeCartIcons();
-				productIds.length = 0;
+				resetAllCartIcons();
 			},
 			error: function () {
 				alert("Error");
@@ -89,8 +87,6 @@ $(function () {
 			},
 			success: function (res) {
 				showCart(res);
-				productIds.push(String (id)); //нужно привести к строке, а то includes потом не найдет
-
 				$this.css('color', '#eb494f');
 				$this.find('i')[0].classList.replace('fa-shopping-cart', 'fa-cart-arrow-down');
 			},
