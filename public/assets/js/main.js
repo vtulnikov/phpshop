@@ -80,7 +80,7 @@ $(function() {
 			success(res) {
 				showCart(res);				
 				$this.css('color', '#eb494f');
-				$this.find('i')[0].classList.replace('fa-shopping-cart', 'fa-cart-arrow-down');
+				$this.find('i')[0]?.classList.replace('fa-shopping-cart', 'fa-cart-arrow-down');
 			},
 			error() {
 				alert("Error");
