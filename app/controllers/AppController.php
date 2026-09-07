@@ -6,6 +6,7 @@ use app\models\Cart;
 use app\widgets\languages\Language;
 use vvt\Controller;
 use vvt\App;
+use RedBeanPHP\R;
 
 class AppController extends Controller
 {
@@ -23,5 +24,13 @@ class AppController extends Controller
         
         \vvt\Language::load($currentLanguageInfo['code'], $this->route);
         Cart::translateCart($currentLanguageInfo['id']);
+        
+        //по-моему это нужно вынести в AppModel
+        $categories = R::getAssoc("SELECT category_id, c.id, c.parent_id, language_id, title, c.slug, content 
+            FROM category_description AS cd
+            JOIN category AS c ON cd.category_id = c.id 
+            WHERE cd.language_id = ?", [$currentLanguageInfo['id']]);
+        App::$app->setProperty("categories_{$currentLanguageInfo['code']}", $categories);
+
     }
 }

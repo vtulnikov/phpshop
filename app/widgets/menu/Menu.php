@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace app\widgets\menu;
 
 use vvt\App;
-use RedBeanPHP\R;
 use vvt\Cache;
 
 class Menu
@@ -30,14 +29,18 @@ class Menu
     }
     private function run():void
     {
+        /**Теперь кэширование не особо имеет смысла, т.к. сам запрос делается в Breadcrumbs, а тут мы просто
+         * получаем данные из Реестра
+         * TODO:настроить кэширование запросов
+         */
         $cache = Cache::getInstance();
         $this->menuHtml = $cache->get($this->cachekey . '_' . $this->language['code']);
 
         if(!$cache->get($this->cachekey . '_' . $this->language['code'])){
-            $this->data = R::getAssoc("SELECT category_id, c.id, c.parent_id, language_id, title, c.slug, content 
-                FROM category_description AS cd
-                JOIN category AS c ON cd.category_id = c.id WHERE cd.language_id = ?", [$this->language['id']]);
-            
+            // $this->data = R::getAssoc("SELECT category_id, c.id, c.parent_id, language_id, title, c.slug, content 
+            //     FROM category_description AS cd
+            //     JOIN category AS c ON cd.category_id = c.id WHERE cd.language_id = ?", [$this->language['id']]);
+            $this->data = App::$app->getProperty("categories_{$this->language['code']}");
             $this->tree = $this->getTree();
             $this->menuHtml = $this->getHtml($this->tree);
             if($this->cachelife){

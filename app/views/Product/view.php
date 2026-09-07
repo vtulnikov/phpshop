@@ -1,15 +1,17 @@
 <?php
 /**
  * @var array $product
+ * @var string $breadcrumbs
  */
 ?>
 
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb bg-light p-2">
-            <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+            <?= $breadcrumbs; ?>
+            <!-- <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
             <li class="breadcrumb-item"><a href="#">Ноутбуки</a></li>
-            <li class="breadcrumb-item active" aria-current="page">MacBook</li>
+            <li class="breadcrumb-item active" aria-current="page">MacBook</li> -->
         </ol>
     </nav>
 </div>
@@ -22,8 +24,9 @@
                 <li><i class="fas fa-check text-success"></i> В наличии</li>
                 <li><i class="fas fa-shipping-fast text-muted"></i> Ожидается</li>
                 <li><i class="fas fa-hand-holding-usd"></i> 
-                <?php if($product['old_price']) :?>
-                <span class="product-price"><small><?= $product['old_price'] ?> руб.</small>
+                <span class="product-price">
+                    <?php if($product['old_price']) :?>
+                    <small><?= $product['old_price'] ?> руб.</small>
                 <?php endif; ?>
                 <?= $product['price'] ?> руб.</li>
             </ul>

@@ -13,7 +13,7 @@ class Product extends AppModel
                 JOIN product_description as pd on p.id = pd.product_id
                 WHERE p.status = 1 AND p.slug = ? AND pd.language_id = ?",[$slug, $lang['id']]);
     }
-    public function getGallery($id):array
+    public function getGallery(int $id):array
     {
         return R::getAll("SELECT * FROM product_gallery WHERE product_id = ?", [$id]);
     }
