@@ -34,9 +34,10 @@ class Menu
         $this->menuHtml = $cache->get($this->cacheKey . '_' . $this->language['code']);
 
         if(!$this->menuHtml){
-            $this->data = R::getAssoc("SELECT category_id, c.id, c.parent_id, language_id, title, c.slug, content 
-                FROM category_description AS cd
-                JOIN category AS c ON cd.category_id = c.id WHERE cd.language_id = ?", [$this->language['id']]);
+            $this->data = App::$app->getProperty('categories');
+            // $this->data = R::getAssoc("SELECT category_id, c.id, c.parent_id, language_id, title, c.slug, content 
+            //     FROM category_description AS cd
+            //     JOIN category AS c ON cd.category_id = c.id WHERE cd.language_id = ?", [$this->language['id']]);
             
             $this->tree = $this->getTree();
             $this->menuHtml = $this->getHtml($this->tree);

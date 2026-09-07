@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use vvt\App;
 use app\models\Product;
+use app\models\Breadcrumbs;
 
 /**@property Product  $model */
 class ProductController extends AppController
@@ -14,6 +15,8 @@ class ProductController extends AppController
         $gallery = $this->model->getGallery($product['id']);
 
         $this->setMeta($product['title'], $product['description'], $product['keywords']);
-        $this->setData(compact('product', 'gallery'));
+
+        $breadcrumbs = Breadcrumbs::getBreadcrumbs($product['category_id'], $product['title']);
+        $this->setData(compact('product', 'gallery' , 'breadcrumbs'));
     }
 }
