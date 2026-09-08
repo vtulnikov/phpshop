@@ -13,7 +13,9 @@ class ProductController extends AppController
         $lang = App::$app->getProperty('language');
         $product = $this->model->getProduct($this->route['slug'], $lang);
         if(!$product){
-            throw new \Exception("Товар с адресом {$this->route['slug']} не найден", 404);
+            // throw new \Exception("Товар с адресом {$this->route['slug']} не найден", 404);
+            $this->error_404();
+            return;
         }
         $this->setMeta($product['title'], $product['description'], $product['keywords']);
         $gallery = $this->model->getGallery($product['id']);

@@ -2,8 +2,6 @@
 
 namespace vvt;
 
-use Exception;
-
 class Router
 {
     protected static array $routes = [];
@@ -59,7 +57,7 @@ class Router
     {
         $url = self::removeQueryParams($url);
         if (!self::matchRoute($url)) {
-            throw new Exception("Страница не найдена", 404);
+            throw new \Exception("Страница не найдена", 404);
         }
         if (!empty(self::$route['lang'])) {
             App::$app->setProperty('lang', self::$route['lang']);
@@ -70,7 +68,7 @@ class Router
             . "Controller";
 
         if (!class_exists($controller)) {
-            throw new Exception("Контроллер {$controller} не найден", 404);
+            throw new \Exception("Контроллер {$controller} не найден", 404);
         }
 
         $controllerObject = new $controller(self::$route);
@@ -80,7 +78,7 @@ class Router
 
         $action = self::toLowerCamelCase(self::$route['action']) . "Action";
         if (!method_exists($controllerObject, $action)) {
-            throw new Exception("Метод {$controller}::{$action} не найден", 404);
+            throw new \Exception("Метод {$controller}::{$action} не найден", 404);
         }
 
         $controllerObject->$action();
