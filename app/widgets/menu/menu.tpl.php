@@ -9,6 +9,6 @@
 </li>
 <?php else: ?>
 <li class="nav-item">
-    <a class="nav-link" href="<?= $category['slug'] ?>"><?= $category['title'] ?></a>
+    <a class="nav-link" href="category/<?= $category['slug'] ?>"><?= $category['title'] ?></a>
 </li>
 <?php endif; ?>

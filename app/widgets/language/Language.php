@@ -20,7 +20,12 @@ class Language
     }
     public static function getLanguages():array
     {
-        return R::getAssoc("SELECT code,title,base,id FROM languages ORDER BY base DESC");
+        $languages = R::getAssoc("SELECT code,title,base,id FROM languages ORDER BY base DESC");
+        foreach($languages as $code => $language){
+            $languages[$code]['id'] = (int) $language['id'];
+            $languages[$code]['base'] = (int) $language['base'];
+        }
+        return $languages;
     }
     public static function getLanguage(array $languages) 
     {

@@ -15,8 +15,10 @@ class Cart extends AppModel
     }
     public function addToCart(array $product, int $quantity)
     {
-        $quantity = abs($quantity);
-
+        if($quantity < 0){
+            $quantity = 1;
+        }
+        
         //если цифровой товар и он добавлен в корзину
         if($product['is_download'] && isset($_SESSION['cart'][$product['id']])){
             return false;
