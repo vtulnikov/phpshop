@@ -15,7 +15,7 @@ class CartController extends AppController
         $id = get('id');
         $quantity = get('quantity');
 
-        $product = $this->model->getProduct($id, $lang);
+        $product = $this->model->getProduct($id, $lang['id']);
         if(!$product) return;
 
         $this->model->addToCart($product, $quantity);
