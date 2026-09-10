@@ -16,8 +16,8 @@ class MainController extends AppController
         $lang = App::$app->getProperty('language');
         
         $slides = $this->model->getSlides();
-        $hits = $this->model->getProducts($lang['id'], 6);
+        $products = $this->model->getProducts($lang['id'], 6);
         // передаем массив ['slides' => .. , и 'hits' => ..] в свойство $data MainController-a
-        $this->setData(compact('slides', 'hits'));
+        $this->setData(compact('slides', 'products'));
     }
 }

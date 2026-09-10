@@ -7,7 +7,7 @@ use RedBeanPHP\R;
 
 class Cart extends AppModel
 {
-    public function getProduct(int $id, string $lang):array
+    public function getProduct(int $id, int $lang):array
     {
         return R::getRow("SELECT p.*, pd.* FROM product as p 
         JOIN product_description as pd on p.id = pd.product_id 

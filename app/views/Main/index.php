@@ -29,14 +29,14 @@
     </div>
 </div>
 
-<?php if(!empty($hits)) :?>
+<?php if(!empty($products)) :?>
 <section class="featured-products">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h3 class="section-title"><?= getTranslatedPart('main_index_featured_products') ?></h3>
             </div>
-                <?php $this->getTemplatePart('Templete-parts/products-loop', compact('hits')); //либо передать ['products' => $products]?>
+                <?php $this->getTemplatePart('Templete-parts/products-loop', compact('products')); //либо передать ['products' => $products]?>
 
         </div>
     </div>

@@ -14,7 +14,6 @@ class CategoryController extends AppController
     {
         $lang = App::$app->getProperty('language');
         $category = $this->model->getCategory($this->route['slug'], $lang['id']);
-        dump($category);
         if(!$category){
             $this->error_404();
             return;
@@ -23,9 +22,10 @@ class CategoryController extends AppController
         $cats = App::$app->getProperty('categories_' . $lang['code']);
         $catIds = $this->model->getIds($cats, (int) $category['id']);
         $catIds .= $category['id'];
-        dump($catIds);
 
         $products = $this->model->getProducts($catIds, $lang['id']);
         dump($products);
+        $this->setMeta($category['title'], $category['keywords'], $category['description']);
+        $this->setData(compact('category', 'breadcrumbs', 'products'));
     }
 }
