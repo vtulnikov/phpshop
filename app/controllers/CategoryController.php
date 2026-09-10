@@ -6,6 +6,7 @@ namespace app\controllers;
 use vvt\App;
 use app\models\Category;
 use app\models\Breadcrumbs;
+use vvt\Pagination;
 
 /**@property Category $model */
 class CategoryController extends AppController
@@ -23,9 +24,15 @@ class CategoryController extends AppController
         $catIds = $this->model->getIds($cats, (int) $category['id']);
         $catIds .= $category['id'];
 
-        $products = $this->model->getProducts($catIds, $lang['id']);
+        $page = get('page');
+        $perpage = (int) App::$app->getProperty('pagination');
+        $total = $this->model->getTotalProducts($catIds);
+        $pagination = new Pagination($page, $perpage, $total);
+        $offset = $pagination->getStart();
+
+        $products = $this->model->getProducts($catIds, $lang['id'], $offset, $perpage);
         dump($products);
         $this->setMeta($category['title'], $category['keywords'], $category['description']);
-        $this->setData(compact('category', 'breadcrumbs', 'products'));
+        $this->setData(compact('category', 'breadcrumbs', 'products', 'total', 'pagination'));
     }
 }

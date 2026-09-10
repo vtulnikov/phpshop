@@ -23,9 +23,13 @@ class Category extends AppModel
         }
         return $result;
     }
-    public function getProducts(string $ids, int $lang)
+    public function getProducts(string $ids, int $lang, int $offset, int $perpage)
     {
         return R::getAll("SELECT p.*, pd.* FROM product p JOIN product_description pd on p.id = pd.product_id
-                WHERE p.status = 1 AND p.category_id IN ($ids) AND pd.language_id = ?", [$lang]);
+                WHERE p.status = 1 AND p.category_id IN ($ids) AND pd.language_id = ? LIMIT $offset, $perpage", [$lang]);
+    }
+    public function getTotalProducts(string $ids):int
+    {
+        return R::count('product', "category_id IN ($ids) AND status = 1");
     }
 }

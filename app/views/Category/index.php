@@ -2,6 +2,8 @@
 /** @var string $breadcrumbs
  * @var array $category
  * @var array $products
+ * @var int $total
+ * @var vvt\Pagination $pagination
  * @var vvt\View $this
  * */ 
 ?>
@@ -74,27 +76,23 @@
 
             <div class="row">
                 <?php if(!empty($products)): ?>
-                     <?php $this->getTemplatePart('Templete-parts/products-loop', compact('products')); ?>
+                    <?php $this->getTemplatePart('Templete-parts/products-loop', compact('products')); ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><?php echo (count($products) . " ".  getTranslatedPart('category_view_total_pagination') . " " . $total) ?></p>
+                        </div>
+                    </div>
                     <?php else: ?>
                         <p><?= getTranslatedPart('category_view_no_products') ?></p>
                 <?php endif; ?>
             </div>
-
+            <?php if($pagination->countPages > 1) :?>
             <div class="row">
                 <div class="col-md-12">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
+                    <?= $pagination; ?>
                 </div>
-
             </div>
-
+            <?php endif; ?>
         </div>
 
     </div>
