@@ -1,4 +1,6 @@
 <?php
+declare(strict_types = 1);
+
 namespace app\controllers;
 
 use vvt\App;
@@ -18,8 +20,8 @@ class ProductController extends AppController
             return;
         }
         $this->setMeta($product['title'], $product['description'], $product['keywords']);
-        $gallery = $this->model->getGallery($product['id']);
-        $breadcrumbs = Breadcrumbs::getBreadCrumbs($product['category_id'], $product['title']);
+        $gallery = $this->model->getGallery((int) $product['id']);
+        $breadcrumbs = Breadcrumbs::getBreadCrumbs((int) $product['category_id'], $product['title']);
 
         $this->setData(compact('product', 'gallery', 'breadcrumbs'));
 
