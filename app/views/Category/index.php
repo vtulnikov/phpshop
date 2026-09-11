@@ -2,6 +2,8 @@
 /** @var string $breadcrumbs
  * @var array $category
  * @var array $products
+ * @var int $total
+ * @var vvt\Pagination $pagination
  * @var vvt\View $this
  * */ 
 ?>
@@ -107,21 +109,18 @@
                 <?php endif; ?>
             </div>
 
+            <?php if($total > $pagination->perPage) :?>
             <div class="row">
                 <div class="col-md-12">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            <?= $pagination; ?>
                         </ul>
                     </nav>
                 </div>
-
             </div>
-
+            <?php endif; ?>
+            <?php ?>
         </div>
 
     </div>
