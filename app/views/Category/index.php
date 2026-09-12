@@ -53,16 +53,26 @@
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="input-sort">Сортировка:</label>
                         <select class="form-select" id="input-sort">
-                            <option selected>По умолчанию</option>
-                            <option value="1">Название (А - Я)</option>
-                            <option value="2">Название (Я - А)</option>
-                            <option value="3">Цена (низкая > высокая)</option>
-                            <option value="3">Цена (высокая > низкая)</option>
+                            <option value="">По умолчанию</option>
+                            <option value="sort=title_asc" 
+                                <?php if(isset($_GET['sort']) && $_GET['sort'] == "title_asc") echo "selected" ?>>
+                                Название (А - Я)
+                            </option>
+                            <option value="sort=title_desc"
+                                <?php if(isset($_GET['sort']) && $_GET['sort'] == "title_desc") echo "selected" ?>>
+                                Название (Я - А)</option>
+                            <option value="sort=price_asc"
+                                <?php if(isset($_GET['sort']) && $_GET['sort'] == "price_asc") echo "selected" ?>>
+                               Цена (низкая > высокая)</option>
+                            <option value="sort=price_desc"
+                            <?php if(isset($_GET['sort']) && $_GET['sort'] == "price_desc") echo "selected" ?>>
+                                Цена (высокая > низкая)
+                            </option>
                         </select>
                     </div>
                 </div>
 
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                     <div class="input-group mb-3">
                         <label class="input-group-text" for="input-sort">Показать:</label>
                         <select class="form-select" id="input-sort">
@@ -73,7 +83,7 @@
                             <option value="3">100</option>
                         </select>
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="row">

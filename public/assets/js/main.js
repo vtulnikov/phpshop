@@ -88,6 +88,11 @@ $(function() {
 		})
 	})
 	//CART
+	//перенаправляем на страницу с гет-параметром сортировки
+	$('#input-sort').on('change', function () {
+		let url = window.location.pathname;
+		window.location = $(this).val() ? url + "?" + $(this).val() : url;
+	});
 	$('.open-search').click(function(e) {
 		e.preventDefault();
 		$('#search').addClass('active');

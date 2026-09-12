@@ -24,10 +24,17 @@ class Category extends AppModel
         }
         return $result;
     }
-    public function getProducts(string $ids, int $lang, int $offset, int $perpage)
+    public function getProducts(string $ids, int $lang, int $offset, int $perpage, string $sort)
     {
+        $sortValues = [
+            "title_asc" => 'ORDER BY title ASC',
+            "title_desc" => 'ORDER BY title DESC',
+            "price_asc" => 'ORDER BY price ASC',
+            "price_desc" => 'ORDER BY price DESC',
+        ];
+        $orderBy = $sortValues[$sort] ?? "";
         return R::getAll("SELECT p.*, pd.* FROM product p JOIN product_description pd on p.id = pd.product_id
-                WHERE p.status = 1 AND p.category_id IN ($ids) AND pd.language_id = ? LIMIT ?, ?", [$lang, $offset, $perpage]);
+                WHERE p.status = 1 AND p.category_id IN ($ids) AND pd.language_id = ? $orderBy LIMIT ?, ?", [$lang, $offset, $perpage]);
     }
     public function getTotalPosts(int $catId):int
     {
