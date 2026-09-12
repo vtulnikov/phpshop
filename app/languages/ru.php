@@ -41,8 +41,9 @@ return [
     'tpl_signup_name_input' => 'Имя',
     'tpl_signup_address_input' => 'Адрес',
 
-    'tpl_search_title' => 'Поиск',
-    'tpl_search_query' => 'Поиск по: ',
+    'tpl_search_title' => 'Результаты поиска',
+    'tpl_search_query' => 'По поисковому запросу: ',
+    'tpl_search_no_result' => 'Товаров по вашему запросу не найдено.',
 
     'tpl_wishlist_add_success' => 'Товар добавлен в избранное',
     'tpl_wishlist_add_error' => 'Ошибка добавления товара в избранное',
