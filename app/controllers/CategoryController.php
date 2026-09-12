@@ -31,7 +31,7 @@ class CategoryController extends AppController
         $offset = $pagination->getStart();
 
         $products = $this->model->getProducts($catIds, $lang['id'], $offset, $perpage);
-        dump($products);
+
         $this->setMeta($category['title'], $category['keywords'], $category['description']);
         $this->setData(compact('category', 'breadcrumbs', 'products', 'total', 'pagination'));
     }

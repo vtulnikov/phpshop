@@ -25,8 +25,18 @@ class Category extends AppModel
     }
     public function getProducts(string $ids, int $lang, int $offset, int $perpage)
     {
+        $sortValues = [
+            "title_asc"  => 'ORDER BY title ASC', 
+            "title_desc" => 'ORDER BY title DESC', 
+            "price_asc"  => 'ORDER BY price ASC',  
+            "price_desc" => 'ORDER BY price DESC', 
+        ];
+        $orderBy = "";
+        if(isset($_GET['sort']) && array_key_exists($_GET['sort'], $sortValues)){
+            $orderBy = $sortValues[$_GET['sort']];
+        }
         return R::getAll("SELECT p.*, pd.* FROM product p JOIN product_description pd on p.id = pd.product_id
-                WHERE p.status = 1 AND p.category_id IN ($ids) AND pd.language_id = ? LIMIT $offset, $perpage", [$lang]);
+                WHERE p.status = 1 AND p.category_id IN ($ids) AND pd.language_id = ? $orderBy LIMIT $offset, $perpage", [$lang]);
     }
     public function getTotalProducts(string $ids):int
     {
