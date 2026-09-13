@@ -97,7 +97,25 @@ $(function () {
 	})
 
 	//CART
-
+	//WISHLIST
+	$('.add-to-wishlist').on('click', function (e) {
+		e.preventDefault();
+		const id = $(this).data('id');
+		const $this = $(this);
+		
+		$.ajax({
+			url: 'wishlist/add',
+			data: {id},
+			success: function (res) {
+				res = JSON.parse(res);
+				console.log(res);
+			},
+			error: function () {
+				alert("Ошибка добавления в Избранное");
+			}
+		})
+	});
+	//WISHLIST
 	//сортировка на странице категории
 	$('#input-sort').on('change', function () {
 		window.location = PATH + window.location.pathname + "?" + $(this).val();
