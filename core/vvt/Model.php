@@ -4,10 +4,10 @@ namespace vvt;
 
 abstract class Model
 {
-    public array $attributes = [];
-    public array $errors = [];
-    public array $rules = [];
-    public array $labels = [];
+    private array $attributes = [];
+    private array $errors = [];
+    private array $rules = [];
+    private array $labels = [];
 
     public function __construct()
     {
