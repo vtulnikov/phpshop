@@ -93,6 +93,25 @@ $(function() {
 		let url = window.location.pathname;
 		window.location = $(this).val() ? url + "?" + $(this).val() : url;
 	});
+	//WISHLIST
+	$('.add-to-wishlist').on('click', function (e) {
+		e.preventDefault();
+		const id = $(this).data('id');
+		const $this = $(this);
+		
+		$.ajax("wishlist/add", {
+			method: 'POST', 
+			data: { id },
+			success(res) {
+				res = JSON.parse(res);
+				console.log(res);
+			},
+			error() {
+				alert('Ошибка добавления в Избранное');
+			}
+		});
+	})
+	//WISHLIST
 	$('.open-search').click(function(e) {
 		e.preventDefault();
 		$('#search').addClass('active');
