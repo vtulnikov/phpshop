@@ -104,7 +104,13 @@ $(function() {
 			data: { id },
 			success(res) {
 				res = JSON.parse(res);
-				console.log(res);
+				Swal.fire(
+					res.text,
+					"",
+					res.result
+				);
+				$this.removeClass('add-to-wishlist').addClass('delete-from-wishlist');
+				$this.find('i').removeClass('far fa-heart').addClass('fas fa-hand-holding-heart');
 			},
 			error() {
 				alert('Ошибка добавления в Избранное');

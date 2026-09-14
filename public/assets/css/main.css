@@ -502,7 +502,8 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 /* Product */
 
 /***/
-a.add-to-cart:has(> i.fa-cart-arrow-down) {
+a.add-to-cart:has(> i.fa-cart-arrow-down),
+a.delete-from-wishlist:has(> i.fa-hand-holding-heart) {
     color: #eb494f;
 }
 

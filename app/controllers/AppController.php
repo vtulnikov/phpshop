@@ -5,6 +5,7 @@ use app\models\AppModel;
 use app\models\Breadcrumbs;
 use app\models\Cart;
 use app\models\Categories;
+use app\models\Wishlist;
 use app\widgets\language\Language;
 use vvt\App;
 use vvt\Controller;
@@ -26,5 +27,6 @@ class AppController extends Controller
         \vvt\Language::load($currentLanguageInfo['code'], $this->route);
 
         Cart::translateCart($currentLanguageInfo['id']);
+        App::$app->setProperty('wishlist', Wishlist::getWishlistIds());
     }
 }
