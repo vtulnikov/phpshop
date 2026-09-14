@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace app\controllers;
 
 use app\models\Wishlist;
+use vvt\App;
 
 /**@property Wishlist $model */
 class WishlistController extends AppController
@@ -20,7 +21,6 @@ class WishlistController extends AppController
             die;
         }
         $product = $this->model->getProduct($id);
-        dump(($product));
         if(!$product){
             $answer = [
                 "result" => "error",
@@ -36,5 +36,12 @@ class WishlistController extends AppController
         ];
         echo json_encode($answer);
         die;
+    }
+    public function indexAction()
+    {
+        $lang = App::$app->getProperty('language');
+        $products = $this->model->getWishlistProducts($lang['id']);
+        $this->setMeta(getTranslatedPart('wishlist_index_title'));
+        $this->setData(compact('products'));
     }
 }

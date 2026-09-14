@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use app\models\AppModel;
 use app\models\Cart;
+use app\models\Wishlist;
 use app\widgets\languages\Language;
 use vvt\Controller;
 use vvt\App;
@@ -31,6 +32,6 @@ class AppController extends Controller
             JOIN category AS c ON cd.category_id = c.id 
             WHERE cd.language_id = ?", [$currentLanguageInfo['id']]);
         App::$app->setProperty("categories_{$currentLanguageInfo['code']}", $categories);
-
+        App::$app->setProperty('wishlist', Wishlist::getWishlistIds());
     }
 }
