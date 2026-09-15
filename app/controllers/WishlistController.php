@@ -9,6 +9,13 @@ use vvt\App;
 /**@property Wishlist $model */
 class WishlistController extends AppController
 {
+    public function indexAction()
+    {
+        $lang = App::$app->getProperty('language');
+        $products = $this->model->getWishlistProducts($lang['id']);
+        $this->setMeta(getTranslatedPart('wishlist_index_title'));
+        $this->setData(compact('products'));
+    }
     public function addAction()
     {
         $id = get('id');
@@ -37,11 +44,22 @@ class WishlistController extends AppController
         echo json_encode($answer);
         die;
     }
-    public function indexAction()
+
+    public function deleteAction()
     {
-        $lang = App::$app->getProperty('language');
-        $products = $this->model->getWishlistProducts($lang['id']);
-        $this->setMeta(getTranslatedPart('wishlist_index_title'));
-        $this->setData(compact('products'));
+        $id = get('id');
+        if($this->model->deleteFromWishlist($id)){
+            $answer = [
+            "result" => "success",
+            "text"   => getTranslatedPart('tpl_wishlist_delete_success'),
+        ];
+        } else{
+             $answer = [
+                "result" => "error",
+                "text"   => getTranslatedPart('tpl_wishlist_delete_error'),
+            ];
+        }
+        echo json_encode($answer);
+        die;
     }
 }

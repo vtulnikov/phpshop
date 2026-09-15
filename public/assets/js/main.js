@@ -98,7 +98,7 @@ $(function () {
 
 	//CART
 	//WISHLIST
-	$('.add-to-wishlist').on('click', function (e) {
+	$('.product-links').on('click', '.add-to-wishlist', function (e) {
 		e.preventDefault();
 		const id = $(this).data('id');
 		const $this = $(this);
@@ -115,7 +115,35 @@ $(function () {
 				);
 				$this.css('color', '#eb494f');
 				$this.removeClass('add-to-wishlist').addClass('delete-from-wishlist');
-				$this.find('i').removeClass('fa-heart').addClass('fas fa-hand-holding-heart');
+				$this.find('i').removeClass('far fa-heart').addClass('fas fa-hand-holding-heart');
+			},
+			error: function () {
+				alert("Ошибка добавления в Избранное");
+			}
+		})
+	});
+	$('.product-links').on('click', '.delete-from-wishlist', function (e) {
+		e.preventDefault();
+		const id = $(this).data('id');
+		const $this = $(this);
+		
+		$.ajax({
+			url: 'wishlist/delete',
+			data: {id},
+			success: function (res) {
+				if (window.location.href.includes('wishlist')) {
+					location.reload();
+				} else {
+					res = JSON.parse(res);
+					Swal.fire(
+						res.text,
+						'',
+						res.result
+					);
+					$this.css('color', '#ee6e73');
+					$this.removeClass('delete-from-wishlist').addClass('add-to-wishlist');
+					$this.find('i').removeClass('fas fa-hand-holding-heart').addClass('far fa-heart');
+				}
 			},
 			error: function () {
 				alert("Ошибка добавления в Избранное");
