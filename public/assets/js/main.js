@@ -94,7 +94,7 @@ $(function() {
 		window.location = $(this).val() ? url + "?" + $(this).val() : url;
 	});
 	//WISHLIST
-	$('.add-to-wishlist').on('click', function (e) {
+	$('.product-links').on('click','.add-to-wishlist', function (e) {
 		e.preventDefault();
 		const id = $(this).data('id');
 		const $this = $(this);
@@ -117,6 +117,35 @@ $(function() {
 			}
 		});
 	})
+	$('.product-links').on('click', '.delete-from-wishlist', function (e) {
+		e.preventDefault();
+		const id = $(this).data('id');
+		const $this = $(this);
+		
+		$.ajax({
+			url: 'wishlist/delete',
+			method: 'POST',
+			data: {id},
+			success: function (res) {
+				if (window.location.href.includes('wishlist')) {
+					location.reload();
+				} else {
+					res = JSON.parse(res);
+					Swal.fire(
+						res.text,
+						'',
+						res.result
+					);
+					$this.css('color', '#ee6e73');
+					$this.removeClass('delete-from-wishlist').addClass('add-to-wishlist');
+					$this.find('i').removeClass('fas fa-hand-holding-heart').addClass('far fa-heart');
+				}
+			},
+			error: function () {
+				alert("Ошибка удаления из Избранного");
+			}
+		})
+	});
 	//WISHLIST
 	$('.open-search').click(function(e) {
 		e.preventDefault();

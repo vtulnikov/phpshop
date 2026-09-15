@@ -54,4 +54,21 @@ class WishlistController extends AppController
         $this->setMeta(getTranslatedPart('wishlist_index_title'));
         $this->setData(compact('products', 'pagination', 'total'));
     }
+    public function deleteAction()
+    {
+        $id = post('id');
+        if($this->model->deleteFromWishlist($id)){
+            $answer = [
+            "result" => "success",
+            "text"   => getTranslatedPart('tpl_wishlist_delete_success'),
+        ];
+        } else{
+             $answer = [
+                "result" => "error",
+                "text"   => getTranslatedPart('tpl_wishlist_delete_error'),
+            ];
+        }
+        echo json_encode($answer);
+        die;
+    }
 }

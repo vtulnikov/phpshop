@@ -52,4 +52,34 @@ class Wishlist extends AppModel
         }
         return [];
     }
+    public function deleteFromWishlist(int $id)
+    {
+        $wishlist = self::getWishlistIds();
+        $key = array_search($id, $wishlist);
+        if(false !== $key){
+            unset($wishlist[$key]);
+            $wishlist = implode(',', $wishlist);
+            if($wishlist){
+                setcookie('wishlist', $wishlist,
+                    [
+                    'expires' => time() + 3600 * 60 * 24* 30,
+                    'path' => '/',
+                    'httponly' => true,
+                    'samesite' => 'Lax',
+                    ]
+                );
+            } else{
+                setcookie('wishlist', "",
+                [
+                    'expires' => time() - 3600,
+                    'path' => '/',
+                    'httponly' => true,
+                    'samesite' => 'Lax',
+                ]
+                );
+            }
+            return true;
+        }
+        return false;
+    }
 }
