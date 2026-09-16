@@ -87,7 +87,7 @@ class Menu
     private function getAttributes(){
         $res = "";
         foreach($this->attrs as $k => $v){
-            $res .= sprintf('%s=%s', (string) h($k), (string) h($v) );
+            $res .= sprintf('%s=%s', h((string) $k),  h((string) $v) );
         }
         return $res;
     }
