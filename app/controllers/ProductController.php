@@ -10,7 +10,7 @@ use app\models\Breadcrumbs;
 /**@property Product $model */
 class ProductController extends AppController
 {
-    public function viewAction()
+    public function indexAction()
     {
         $lang = App::$app->getProperty('language');
         $product = $this->model->getProduct($this->route['slug'], $lang);

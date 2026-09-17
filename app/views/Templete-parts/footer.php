@@ -5,7 +5,7 @@
                 <div class="col-md-3 col-6">
                     <h4><?= getTranslatedPart('tpl_info') ?></h4>
                     <?php new app\widgets\page\Page([
-                        'cache' => 0,
+                        'cache' => 10,
                         'class' => 'list-unstyled',
                         'prepend' => '<li><a href="' . getBaseURl() . '">'. getTranslatedPart('tpl_home_link') . '</a></li>',
                     ]) ?>
