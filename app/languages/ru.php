@@ -3,8 +3,6 @@ declare(strict_types = 1);
 
 return [
     'tpl_search'       => 'Поиск...',
-    'tpl_login'        => 'Авторизация',
-    'tpl_signup'       => 'Регистрация',
     'tpl_info'         => 'Информация',
     'tpl_working_hours'=> 'Время работы',
     'tpl_contacts'     => 'Контакты',
@@ -28,6 +26,8 @@ return [
     'tpl_cart_btn_clear' => 'Очистить корзину',
     'tpl_cart_empty' => 'Корзина пуста',
 
+    'tpl_login' => 'Авторизация',
+    'tpl_signup' => 'Регистрация',
     'tpl_logout' => 'Выход',
     'tpl_cabinet' => 'Кабинет',
 

@@ -3,21 +3,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-6">
-                    <h4>Информация</h4>
+                    <h4><?= getTranslatedPart('tpl_info') ?></h4>
                     <?php new app\widgets\page\Page([
-                        'class' => "list-unstyled",
-                        'cacheLife' => 10
+                        'cacheLife' => 10,
+                        'class' => 'list-unstyled',
                     ]) ?>
-                    <!-- <ul class="list-unstyled">
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">О магазине</a></li>
-                        <li><a href="#">Оплата и доставка</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul> -->
                 </div>
 
                 <div class="col-md-3 col-6">
-                    <h4>Время работы</h4>
+                    <h4><?= getTranslatedPart('tpl_working_hours') ?></h4>
                     <ul class="list-unstyled">
                         <li>г. Казань, ул. Ленина, 12</li>
                         <li>пн-вс: 8:00 - 17:00</li>
@@ -26,7 +20,7 @@
                 </div>
 
                 <div class="col-md-3 col-6">
-                    <h4>Контакты</h4>
+                    <h4><?= getTranslatedPart('tpl_contacts') ?></h4>
                     <ul class="list-unstyled">
                         <li><a href="tel:5551234567">555 123-45-67</a></li>
                         <li><a href="tel:5551234567">555 123-45-68</a></li>
@@ -35,7 +29,7 @@
                 </div>
 
                 <div class="col-md-3 col-6">
-                    <h4>Мы в сети</h4>
+                    <h4><?= getTranslatedPart('tpl_social') ?></h4>
                     <div class="footer-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
@@ -51,11 +45,11 @@
     <i class="fas fa-angle-double-up"></i>
 </button>
 
-<div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Корзина</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><?= getTranslatedPart('tpl_cart_title') ?></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-cart-content"></div>
@@ -75,6 +69,7 @@
 <script src="<?= PATH; ?>/assets/js/main.js"></script>
 <script src="<?= PATH; ?>/assets/js/jquery.magnific-popup.min.js"></script>
 <script src="<?= PATH; ?>/assets/js/sweetalert2.js"></script>
+
 </body>
 
 </html>

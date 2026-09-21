@@ -59,8 +59,13 @@ use vvt\View;
                                 <i class="far fa-user"></i>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><?= getTranslatedPart('tpl_login') ?></a></li>
-                                <li><a class="dropdown-item" href="#"><?= getTranslatedPart('tpl_signup') ?></a></li>
+                                <?php if(empty($_SESSION['user'])): ?>
+                                <li><a class="dropdown-item" href="user/login"><?= getTranslatedPart('tpl_login') ?></a></li>
+                                <li><a class="dropdown-item" href="user/signup"><?= getTranslatedPart('tpl_signup') ?></a></li>
+                                <?php else: ?>
+                                <li><a class="dropdown-item" href="user/cabinet"><?= getTranslatedPart('tpl_cabinet') ?></a></li>
+                                <li><a class="dropdown-item" href="user/logout"><?= getTranslatedPart('tpl_logout') ?></a></li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                         <?= new Language()->getHtml(); ?>
@@ -81,8 +86,8 @@ use vvt\View;
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <?php new Menu([
                                 'class' => 'navbar-nav ms-auto mb-2 mb-lg-0',
-                                'cacheKey' => 'topmenu',
-                                'cacheLife' => 10,
+                                'cachekey' => 'topmenu',
+                                'cachelife' => 10,
                                 ]);
                             ?>
                         </div>

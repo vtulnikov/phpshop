@@ -3,8 +3,6 @@ declare(strict_types = 1);
 
 return [
     'tpl_search'       => 'Search...',
-    'tpl_login'        => 'Login',
-    'tpl_signup'       => 'Sign Up',
     'tpl_info'         => 'Information',
     'tpl_working_hours'=> 'Working Hours',
     'tpl_contacts'     => 'Contacts',
@@ -30,6 +28,8 @@ return [
     'tpl_cart_btn_clear' => 'Clear basket',
     'tpl_cart_empty' => 'Empty basket',
 
+    'tpl_login' => 'Login',
+    'tpl_signup' => 'Signup',
     'tpl_logout' => 'Logout',
     'tpl_cabinet' => 'Cabinet',
 

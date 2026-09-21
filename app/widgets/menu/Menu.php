@@ -3,51 +3,62 @@ declare(strict_types = 1);
 
 namespace app\widgets\menu;
 
-use RedBeanPHP\R;
 use vvt\App;
 use vvt\Cache;
 
 class Menu
 {
-    protected array $data;
-    protected array $tree;
-    protected string|false $menuHtml;
-    protected string $tpl;
-    protected string $container = 'ul';
-    protected string $class = 'menu';
-    protected int $cacheLife = 0;
-    protected string $cacheKey = '';
-    protected array $attrs = [];
-    protected string $prepend = '';
-    protected array $language;
+    private array $data = [];
+    private array $tree = [];
+    private string $container = 'ul';
+    private string $tpl;
+    private string|false $menuHtml;
+    private int $cachelife = 3600;
+    private string $cachekey;
+    private array $attrs = [];
+    private string $prepend = "";
+    private string $class;
+    private array $language;
 
     public function __construct(array $options)
     {
         $this->language = App::$app->getProperty('language');
-        $this->tpl = __DIR__. "/menu.tpl.php";
+        $this->tpl = APP . "/widgets/menu/menu.tpl.php";
         $this->checkOptions($options);
         $this->run();
     }
     private function run():void
     {
+        /**Теперь кэширование не особо имеет смысла, т.к. сам запрос делается в Breadcrumbs, а тут мы просто
+         * получаем данные из Реестра
+         * TODO:настроить кэширование запросов
+         */
         $cache = Cache::getInstance();
-        $this->menuHtml = $cache->get($this->cacheKey . '_' . $this->language['code']);
+        $this->menuHtml = $cache->get($this->cachekey . '_' . $this->language['code']);
 
-        if(!$this->menuHtml){
-            $this->data = App::$app->getProperty('categories');
+        if(!$cache->get($this->cachekey . '_' . $this->language['code'])){
             // $this->data = R::getAssoc("SELECT category_id, c.id, c.parent_id, language_id, title, c.slug, content 
             //     FROM category_description AS cd
             //     JOIN category AS c ON cd.category_id = c.id WHERE cd.language_id = ?", [$this->language['id']]);
-            
+            $this->data = App::$app->getProperty("categories");
             $this->tree = $this->getTree();
             $this->menuHtml = $this->getHtml($this->tree);
-            if($this->cacheLife){
-                $cache->set($this->cacheKey . '_' . $this->language['code'], $this->output(), $this->cacheLife);
+            if($this->cachelife){
+                $cache->set($this->cachekey . '_' . $this->language['code'], $this->output(), $this->cachelife);
             }
         } 
         echo $this->output();
     }
-    public function getTree():array
+    private function checkOptions(array $options):void
+    {
+        foreach($options as $k => $v){
+            if(!property_exists($this, $k)){
+                throw new \InvalidArgumentException("Отсутствует свойство $k");
+            }
+            $this->$k = $v;
+        }
+    }
+    private function getTree():array
     {
         $tree = [];
         $data = $this->data;
@@ -60,15 +71,6 @@ class Menu
         }
         unset($node);
         return $tree;
-    }
-    private function checkOptions(array $options):void
-    {
-        foreach($options as $key => $value){
-            if(!property_exists($this, $key)) {
-                throw new  \InvalidArgumentException("Неизвестное свойство - {$key}");   
-            };
-            $this->$key = $value;
-        }
     }
     private function getHtml(array $tree):string
     {
@@ -87,7 +89,7 @@ class Menu
     private function getAttributes(){
         $res = "";
         foreach($this->attrs as $k => $v){
-            $res .= sprintf('%s=%s', h((string) $k),  h((string) $v) );
+            $res .= sprintf('%s=%s', h( (string)$k), h( (string)$v) );
         }
         return $res;
     }
