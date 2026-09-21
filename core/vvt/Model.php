@@ -4,7 +4,7 @@ namespace vvt;
 
 abstract class Model
 {
-    private array $attributes = [];
+    protected array $attributes = [];
     private array $errors = [];
     private array $rules = [];
     private array $labels = [];
@@ -12,5 +12,13 @@ abstract class Model
     public function __construct()
     {
         Db::getInstance();
+    }
+    public function load(array $data)
+    {
+        foreach($this->attributes as $name => $value){
+            if(isset($data[$name])){
+                $this->attributes[$name] = $data[$name];
+            }
+        }
     }
 }
