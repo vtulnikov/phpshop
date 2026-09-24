@@ -19,15 +19,19 @@ class UserController extends AppController
     public function signupAction()
     {
         if(User::checkAuth()){
-            redirect(getBaseUrl());
+            redirect("user/cabinet");
         }
         if(!empty($_POST)){
             $data = $_POST;
             $this->model->load($data);
-            dump($data);
-            dump($this->model->attributes);
+            if(!$this->model->validate($data)){
+                $this->model->getErrors();
+                redirect();
+            } else{
+                $_SESSION['success'] = getTranslatedPart('user_signup_success_register');
+                redirect("/user/cabinet");
+            }
         }
-       
         $this->setMeta(getTranslatedPart('tpl_signup'));
     }
     public function cabinetAction()
