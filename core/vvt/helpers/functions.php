@@ -11,19 +11,15 @@ function h(?string $data): string
 {
     return htmlspecialchars($data ?? '', ENT_QUOTES);
 }
-function redirect($url = "")
+function redirect(?string $url = null) : never
 {
     if($url){
         $redirect = $url;
     } else{
         $redirect = $_SERVER['HTTP_REFERER'] ?? PATH;
     }
-    if (!filter_var($redirect, FILTER_VALIDATE_URL)) {
-        $redirect = PATH;
-    }
-    
     header("Location: {$redirect}");
-    die;
+    exit;
 }
 function checkUrlLanguage(string $request_uri)
 {
