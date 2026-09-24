@@ -5,9 +5,9 @@ namespace vvt;
 abstract class Model
 {
     protected array $attributes = [];
-    private array $errors = [];
-    private array $rules = [];
-    private array $labels = [];
+    public array $errors = [];
+    protected array $rules = [];
+    protected array $labels = [];
 
     public function __construct()
     {

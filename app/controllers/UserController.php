@@ -24,12 +24,18 @@ class UserController extends AppController
         if(!empty($_POST)){
             $data = $_POST;
             $this->model->load($data);
-            dump($data);
-            dump($this->model->attributes);
+            if($this->model->validate($this->model->attributes)){
+                $_SESSION['success'] = getTranslatedPart('user_signup_success_register');
+                redirect("user/cabinet");
+            } else {
+                $_SESSION['errors'] = $this->model->getErrors();
+                redirect();
+            }
         }
-       
+        
         $this->setMeta(getTranslatedPart('tpl_signup'));
     }
+    
     public function cabinetAction()
     {
 
