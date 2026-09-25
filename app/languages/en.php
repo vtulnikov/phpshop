@@ -37,6 +37,7 @@ return [
     'tpl_orders_files' => 'Files',
     'tpl_user_credentials' => 'Credentials',
     'tpl_user_logout' => 'Log out',
+    'tpl_user_login' => 'Enter',
 
     'tpl_signup_btn' => 'Register',
     'tpl_signup_email_input' => 'E-mail',

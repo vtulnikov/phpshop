@@ -59,4 +59,28 @@ class User extends AppModel
             return true;
         }
     }
+    public function login($is_admin = false)
+    {
+        $email = post('email');
+        $password = post('password');
+
+        if($email && $password){
+            if($is_admin){
+                $user = R::findOne("users", "email = ? AND role = 'admin' ", [$email]);
+            } else{
+                $user = R::findOne("users", "email = ? ", [$email]);
+            }
+
+            if($user){
+                if(password_verify($password, $user->password)){
+                    foreach($user as $k => $v){
+                        if($k == 'password') continue;
+                        $_SESSION['user'][$k] = $v;
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

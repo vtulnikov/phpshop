@@ -22,7 +22,7 @@ class Language
         }
         self::$data = array_merge(self::$view, self::$layout);
     }
-    public static function get(string $key)
+    public static function get(string $key):?string
     {
         return self::$data[$key] ?? null;
     }

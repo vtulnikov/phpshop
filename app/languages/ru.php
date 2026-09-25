@@ -36,6 +36,7 @@ return [
     'tpl_orders_files' => 'Файлы',
     'tpl_user_credentials' => 'Учетные данные',
     'tpl_user_logout' => 'Выход',
+    'tpl_user_login' => 'Вход',
 
     'tpl_signup_email_input' => 'E-mail',
     'tpl_signup_password_input' => 'Пароль',

@@ -12,7 +12,11 @@ body {
 	min-width: 320px;
 	padding-top: 130px;
 }
-
+label.required::before{
+	content: "* ";
+	color: #dc3545;
+	font-weight: bold;
+}
 img{
 	max-width: 100%;
 	height: auto;
