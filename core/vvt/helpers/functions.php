@@ -77,3 +77,7 @@ function changeCartIcon(int $id)
     }
     return $icon;
 }
+function getFieldData(string $fieldname)
+{
+    return isset($_SESSION['form_data'][$fieldname]) ? h($_SESSION['form_data'][$fieldname]) : "";
+}

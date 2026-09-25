@@ -24,12 +24,21 @@ class UserController extends AppController
         if(!empty($_POST)){
             $data = $_POST;
             $this->model->load($data);
-            if(!$this->model->validate($data)){
+            
+            if(!$this->model->validate($data) || !$this->model->checkUnique()){
                 $this->model->getErrors();
+                $_SESSION['form_data'] = $data;
                 redirect();
             } else{
-                $_SESSION['success'] = getTranslatedPart('user_signup_success_register');
-                redirect("/user/cabinet");
+                $this->model->attributes['password'] = password_hash($this->model->attributes['password'], PASSWORD_ARGON2I);
+                if($this->model->save('users')){
+                    $_SESSION['success'] = getTranslatedPart('user_signup_success_register');
+                    redirect("user/cabinet");
+                } else{
+                    $_SESSION['errors'] = getTranslatedPart('user_signup_error_register');
+                    redirect();
+                }
+                
             }
         }
         $this->setMeta(getTranslatedPart('tpl_signup'));

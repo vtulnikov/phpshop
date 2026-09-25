@@ -17,28 +17,28 @@
 
                 <div class="col-md-6 offset-md-3">
                     <div class="form-floating mb-3">
-                        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
+                        <input type="email" name="email" class="form-control" value="<?= getFieldData('email') ?>" id="email" placeholder="name@example.com">
                         <label class="required" for="email"><?= getTranslatedPart('tpl_signup_email_input'); ?></label>
                     </div>
                 </div>
 
                 <div class="col-md-6 offset-md-3">
                     <div class="form-floating mb-3">
-                        <input type="password" name="password" class="form-control" id="password" placeholder="password">
+                        <input type="password" name="password" class="form-control" value="<?= getFieldData('password') ?>" id="password" placeholder="password">
                         <label class="required" for="password"><?= getTranslatedPart('tpl_signup_password_input'); ?></label>
                     </div>
                 </div>
 
                 <div class="col-md-6 offset-md-3">
                     <div class="form-floating mb-3">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                        <input type="text" name="name" value="<?= getFieldData('name') ?>" class="form-control" id="name" placeholder="Name">
                         <label class="required" for="name"><?= getTranslatedPart('tpl_signup_name_input'); ?></label>
                     </div>
                 </div>
 
                 <div class="col-md-6 offset-md-3">
                     <div class="form-floating mb-3">
-                        <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+                        <input type="text" name="address" value="<?= getFieldData('address') ?>" class="form-control" id="address" placeholder="Address">
                         <label class="required" for="address"><?= getTranslatedPart('tpl_signup_address_input'); ?></label>
                     </div>
                 </div>
@@ -47,7 +47,11 @@
                     <button type="submit" class="btn btn-danger"><?= getTranslatedPart('user_signup_signup_btn'); ?></button>
                 </div>
             </form>
-
+            <?php 
+            if(isset($_SESSION['form_data'])){
+                unset($_SESSION['form_data']);
+            }
+            ?>
         </div>
     </div>
 </div>
