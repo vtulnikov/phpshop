@@ -5,6 +5,7 @@ namespace app\models;
 
 use Valitron\Validator;
 use vvt\App;
+use RedBeanPHP\R;
 
 class User extends AppModel
 {
@@ -18,13 +19,13 @@ class User extends AppModel
         'required' => ['name', 'password', 'email', 'address'],
         'email' => ['email'],
         'lengthMin' => [
-            'password' => 5,
+            ['password', 5],
         ],
         'lengthMax' => [
-            'email' => 50,
-            'password' => 255,
-            'name' => 255,
-            'address' => 255,
+            ['email', 50],
+            ['password', 255],
+            ['name', 255],
+            ['address', 255],
         ],
     ];
     protected array $labels = [
@@ -71,5 +72,26 @@ class User extends AppModel
             $labels[$k] = getTranslatedPart($v);
         }
         return $labels;
+    }
+    public function save(string $table)
+    {
+        $tbl = R::dispense($table);
+        foreach($this->attributes as $k => $v){
+            if($v != ""){
+                $tbl->$k = $v;
+            }
+        }
+        return R::store($tbl);
+    }
+    //его можно сделать универсальным, передавая аргументами таблицу, поле и значение
+    public function isUnique($textError = ""):bool
+    {
+        $user = R::findOne('users', 'email=?', [$this->attributes['email']]);
+        if($user){
+            $this->errors['unique'][] = $textError ?: getTranslatedPart('user_signup_error_email_unique');
+            return false;
+        } else{
+            return true;
+        }
     }
 }

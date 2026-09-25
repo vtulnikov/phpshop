@@ -83,3 +83,7 @@ function getCartIcon(int $id)
     }
     return $icon;
 }
+function getFormData(string $fieldname):string
+{
+    return (isset($_SESSION['form_data'][$fieldname]) ? h($_SESSION['form_data'][$fieldname]) : "");
+}
