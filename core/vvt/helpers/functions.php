@@ -59,7 +59,7 @@ function get(string $key, string $type = 'i')
  * @param string $type Допустимые значения: 'i' (int), 'f' (float), 's' (string).
  * @return int|float|string
  */
-function post(string $key, string $type = 'i')
+function post(string $key, string $type = 's')
 {
     $value = $_POST[$key] ?? '';
 
@@ -70,7 +70,7 @@ function post(string $key, string $type = 'i')
         default => throw new InvalidArgumentException('Неизвестный тип данных')
     };
 }
-function getTranslatedPart(string $key):string
+function getTranslatedPart(string $key):?string
 {
     return \vvt\Language::get($key);
 }

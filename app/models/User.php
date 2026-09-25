@@ -94,4 +94,23 @@ class User extends AppModel
             return true;
         }
     }
+    public function login():bool
+    {
+        $email = post('email');
+        $password = post('password');
+
+        if($email && $password){
+            $user = R::findOne('users', "email = ?", [$email]);
+            if($user){
+                if(password_verify($password, $user->password)){
+                    foreach($user as $k => $v){
+                        if($k == 'password') continue;
+                        $_SESSION['user'][$k] = $v;
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
